@@ -5,26 +5,43 @@
 	<title>다모임</title>
 	<link href="css/join.css" rel="stylesheet" type="text/css" />
 	<link href="css/common.css" rel="stylesheet" type="text/css" />
+	<link rel='icon' type='images/png'href='img/logo.png'>
 </head>
 
 <script>
-	function join() {
-		var param = {};
-		param.userID = $("userID").val();
-		param.userPass = $("userPass").val();
-		param.userName = $("userName").val();
-		param.userMajor = $("userMajor").val();
-		var ajax = $.ajax({
-			url: "/join",
-			data: param,
-			type: 'POST',
-			dataType: "JSON",
-			success: function(result) {
-				alert(result.msg);
-				location.href = '/login';
-			}
-		});
+	var idck=false;
+	var pwck=false;
+
+	function submit(){
+		if(idck==true && pwck==true){
+			form.action='join.php';
+		}
 	}
+	function checkid(){
+		var userid = document.getElementById("uid").value;
+		if(userid)
+		{
+			url = "check.php?userid="+userid;
+			window.open(url,"chkid","width=300,height=200,toobar=no,menubar=no,location=no,scrollbar=no");
+			idck=true;
+		}else{
+			alert("아이디를 입력하세요");
+		}
+	}
+	function tocheckpw(){
+		var pw=document.getElementById("pw").value;
+		var pwch=document.getElementById("pwch").value;
+		if(pw!=pwch){
+			alert('비밀번호가 틀렸습니다. 다시 입력해 주세요');
+			return false;
+		}
+		if(pw==pwch){
+			alert('비밀번호가 일치합니다.');
+			pwck=true;
+			return true;
+		}
+	}
+
 </script>
 
 <body style="overflow:hidden;">
