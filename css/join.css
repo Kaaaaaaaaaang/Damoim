@@ -1,0 +1,134 @@
+.container {
+	width: 100%; height: 100%;
+	margin: 0px auto;
+	position: relative;
+}
+
+video { width: 100%; }
+
+.background_box {
+	position: absolute;
+	top:0; left:0;
+	width: 100%; height: 100%;
+	background-color: #000000; opacity: 0.5;
+}
+
+.menu {
+	width: 100%; height: 15%;
+	margin: 0px auto;
+	position: absolute;
+	top:0; left:0;
+}
+
+.menu h3 { 
+	font-size: 20px; 
+	color: #FFFFFF; 
+	font-family: 'Noto Sans KR', sans-serif; 
+	font-weight: 500;
+	float: right;
+	margin-right: 2%;
+	margin-top: 3%;
+}
+
+.menu #mypage {
+	margin-right: 5%;
+}
+
+.menu img {
+	margin-left: 4.5%;
+	margin-top: 3%;
+	float: left;
+	width: 5%;
+	height: auto;
+}
+
+.container2 {
+	width: 100%; height: 100%;
+	margin: 0 auto;
+	margin-top: 11%;
+	text-align: center;
+	position: absolute;
+	top:0; left:0;
+}
+
+.container2 input[type=text], input[type=email] { 
+	font-size: 20px; 
+	background-color:#00000000; 
+	font-family: 'Noto Sans KR', sans-serif; 
+	font-weight: 500; 
+	margin-top: 2%; 
+	padding-left: 1%;
+    padding-bottom:1%;
+	width: 30%; 
+	height: 7%; 
+	border:0;
+	border-bottom:solid 1px #FFFFFF;
+}
+
+.container2 input[type=password] { 
+	font-size: 20px; 
+	background-color:#00000000; 
+	font-family: 'Noto Sans KR', sans-serif; 
+	font-weight: 500; 
+	margin-top: 2%; 
+	padding-left: 1%;
+    padding-bottom:1%;
+	width: 30%;
+	width: 30%; 
+	height: 7%; 
+	color: black; 
+	border:0; 
+	border-bottom:solid 1px #FFFFFF;
+}
+
+.container2 input[type=button] { 
+	font-size: 0.8em; 
+	background-color:#FF002E; 
+	font-family: 'Noto Sans KR', sans-serif; 
+	font-weight: 300;
+	margin-top: 1%;
+	margin: 0 auto;
+	width: 4.5%; 
+	height: 50px;
+	color: black; 
+	border:0;
+	border-radius: 10px; 
+	color: #FFFFFF;
+}
+
+.container2 select { 
+	font-size: 20px; 
+	color: #FFFFFF; 
+	background-color:#00000000; 
+	font-family: 'Noto Sans KR', sans-serif; 
+	font-weight: 500; 
+	margin-top: 2%; 
+	padding-left: 1%; 
+	padding-bottom: 1%;
+	width: 31%; 
+	height: 7%; 
+	color: black; 
+	border:0; 
+	border-bottom:solid 1px #FFFFFF; 
+}
+
+select:focus { outline: none; }
+select::-ms-expand { display: none; }
+
+input:focus { outline: none; }
+input::-ms-input-placeholder { color: #F2F2F2; }
+input::-webkit-input-placeholder { color: #F2F2F2; }
+input::-moz-placeholder { color: #F2F2F2; }
+
+.container2 #join_btn { 
+	font-size: 20px; 
+	color: #FFFFFF; 
+	font-family: 'Noto Sans KR', sans-serif; 
+	font-weight: 500; 
+	margin-top: 2%;
+	width: 32%; 
+	height: 50px; 
+	background-color: #FF002E; 
+	border-radius:30px;  
+	border: none; 
+}

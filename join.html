@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>다모임</title>
+	<link href="css/join.css" rel="stylesheet" type="text/css" />
+	<link href="css/common.css" rel="stylesheet" type="text/css" />
+</head>
+
+<script>
+	function join() {
+		var param = {};
+		param.userID = $("userID").val();
+		param.userPass = $("userPass").val();
+		param.userName = $("userName").val();
+		param.userMajor = $("userMajor").val();
+		var ajax = $.ajax({
+			url: "/join",
+			data: param,
+			type: 'POST',
+			dataType: "JSON",
+			success: function(result) {
+				alert(result.msg);
+				location.href = '/login';
+			}
+		});
+	}
+</script>
+
+<body style="overflow:hidden;">
+	<div class="container">
+		<video muted autoplay loop>
+        	<source src="img/background.mp4" type="video/mp4">
+     	</video>
+     	<div class="background_box"></div>
+     	<div class="container2">
+			<form method="POST" action="/process/adduser">
+				<input type="text" name="userName" id="userName" placeholder="이름" style="color: #FFFFFF;"><br>
+				<input type="text" name="userID" id="userID" placeholder="아이디" style="color: #FFFFFF; width: 25%;">
+				<input type="button" name="idok" value="중복확인"><br>
+				<input type="password" name="userPass" id="userPass" placeholder="비밀번호" style="color: #FFFFFF;"><br>
+				<input type="password" name="pwok" id="pwok" placeholder="비밀번호 확인" style="color: #FFFFFF;"><br>
+				<input type="email" name="userEmail" id="userEmail" placeholder="email" style="color: #FFFFFF; width: 25%;">
+				<input type="button" name="emailok" value="인증하기"><br>
+				<select name="userMajor" style="color: #FFFFFF; background-color: #00000000;">
+					<option value="none" style="color: #000000;">학과</option>
+					<option value="soft" style="color: #000000;">뉴미디어소프트웨어과</option>
+					<option value="web" style="color: #000000;">뉴미디어웹솔루션과</option>
+					<option value="design" style="color: #000000;">뉴미디어디자인과</option>
+				</select><br>
+				<button id="join_btn" type="submit">JOIN</button><br><br>
+			</form>
+     	</div>
+		 <div class="menu">
+			<a href="main.html"><img id="logo" src="img/logo.png"></a>
+			<a href="mypage.html"><h3 id="mypage">마이페이지</h3></a>
+			<h3>|</h3>
+			<a href="group_lookup.html"><h3 id="lookup">그룹조회</h3></a>
+			<h3>|</h3>
+			<a href="group_create.html"><h3 id="create">그룹생성</h3></a>
+			<h3>|</h3>
+			<a href="recommand.html"><h3 id="recommand">추천받기</h3></a>
+		</div>
+	</div>
+</body>
+</html>
