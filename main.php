@@ -19,17 +19,17 @@
      		<p>미림인이 다모인 여기, 같이 공부합시다!</p>
      		
 
-			 <?php
-					session_start();
-					if(isset($_SESSION['user_name'])){?>
-						<button onclick="location.href='recommand.html'">모임 추천받기</button>
-						<?php
-					}else{
-					?>
-						<button onclick="location.href='login.html'">다모임 가입하기</button>
-					<?php
-					}
-					?>
+			<?php
+				session_start();
+				if(isset($_SESSION['user_name'])){?>
+					<button onclick="location.href='recommand.html'">모임 추천받기</button>
+				<?php
+				}else{
+				?>
+					<button onclick="location.href='login.html'">다모임 가입하기</button>
+				<?php
+				}
+			?>
      	</div>
 		 <div class="menu">
 			<a href="main.php"><img id="logo" src="img/logo.png"></a>
