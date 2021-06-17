@@ -18,10 +18,10 @@
 		}
 	}
 	function checkid(){
-		var userid = document.getElementById("uid").value;
+		var userid = document.getElementById("userID").value;
 		if(userid)
 		{
-			url = "check.php?userid="+userid;
+			url = "IDcheck.php?userID="+userid;
 			window.open(url,"chkid","width=300,height=200,toobar=no,menubar=no,location=no,scrollbar=no");
 			idck=true;
 		}else{
@@ -51,15 +51,17 @@
      	</video>
      	<div class="background_box"></div>
      	<div class="container2">
-			<form method="POST" action="/process/adduser">
-				<input type="text" name="userName" id="userName" placeholder="이름" style="color: #FFFFFF;"><br>
-				<input type="text" name="userID" id="userID" placeholder="아이디" style="color: #FFFFFF; width: 25%;">
-				<input type="button" name="idok" value="중복확인"><br>
-				<input type="password" name="userPass" id="userPass" placeholder="비밀번호" style="color: #FFFFFF;"><br>
-				<input type="password" name="pwok" id="pwok" placeholder="비밀번호 확인" style="color: #FFFFFF;"><br>
-				<input type="email" name="userEmail" id="userEmail" placeholder="email" style="color: #FFFFFF; width: 25%;">
+			<form method="POST" action="join.php">
+
+				<input required type="text" name="userName" id="userName" placeholder="이름" style="color: #FFFFFF;"><br>
+				<input required type="text" name="userID" id="userID" placeholder="아이디" style="color: #FFFFFF; width: 25%;">
+				<input required type="button" name="idok" value="중복확인" onclick="checkid();"><br>
+				<input required type="password" name="userPass" id="userPass" placeholder="비밀번호" style="color: #FFFFFF;"><br>
+				<input required type="password" name="pwok" id="pwok" placeholder="비밀번호 확인" style="color: #FFFFFF;"><br>
+				<input required type="email" name="userEmail" id="userEmail" placeholder="email" style="color: #FFFFFF; width: 25%;">
+
 				<input type="button" name="emailok" value="인증하기"><br>
-				<select name="userMajor" style="color: #FFFFFF; background-color: #00000000;">
+				<select required name="userMajor" style="color: #FFFFFF; background-color: #00000000;">
 					<option value="none" style="color: #000000;">학과</option>
 					<option value="soft" style="color: #000000;">뉴미디어소프트웨어과</option>
 					<option value="web" style="color: #000000;">뉴미디어웹솔루션과</option>
