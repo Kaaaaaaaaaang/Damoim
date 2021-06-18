@@ -17,6 +17,7 @@ $day = $_POST['day'];
 $start = $_POST['start'];
 $end = $_POST['end'];
 $intro = $_POST['intro'];
+$study_img = $_POST['study_img'];
 
 if($category == "employment") $category = "취업 준비";
 else if($category == "programming") $category = "전공 과목 스터디";
@@ -38,7 +39,7 @@ foreach($major_array as $value) {
 }
 $major = $result;
 
-$major_array = array($day);
+$day_array = array($day);
 foreach($day_array as $value) {
   $result = implode("|", $value);
 }
