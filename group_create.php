@@ -17,7 +17,6 @@ $day = $_POST['day'];
 $start = $_POST['start'];
 $end = $_POST['end'];
 $intro = $_POST['intro'];
-$study_img = $_POST['study_img'];
 
 if($category == "employment") $category = "취업 준비";
 else if($category == "programming") $category = "전공 과목 스터디";
@@ -28,79 +27,50 @@ else if($how == "offline") $how = "오프라인";
 
 
 $grade_array = array($grade);
-
 foreach($grade_array as $value) {
   $result = implode("|", $value);
 }
-
 $grade = $result;
 
 $major_array = array($major);
-
 foreach($major_array as $value) {
   $result = implode("|", $value);
 }
-
 $major = $result;
 
 $major_array = array($day);
-
 foreach($day_array as $value) {
   $result = implode("|", $value);
 }
-
 $day = $result;
 
-/*
-var_dump($_FILES);
+$uploaddir = '../user/images/';
+$uploadfile = $uploaddir.$_FILES['study_img']['name'];
+$f_name = $_FILES['study_img']['name'];
+$f_type = $_FILES['study_img']['type'];
+$f_size = $_FILES['study_img']['size'];
+$f_size = $_FILES['study_img']['tmp_name'];
+$study_img = $uploadfile;
 
-$tempFile = $_FILES['study_img']['tmp_name'];
-
-$fileTypeExt = explode("/", $_FILES['imgFile']['type']);
-
-$fileExt = $fileExt[0];
-
-$extStatus = false;
-
-switch($fileExt) {
-
-  case 'jpeg':
-  case 'jpg' :
-  case 'gif' :
-  case 'bmp' :
-  case 'png' :
-    $extStatus = true;
-    break;
-  default :
-  echo "이미지 전용 확장자(jpg, bmp, gif, png)외에는 사용이 불가능합니다.";
-  break;
-
+if(move_uploaded_file($_FILES['study_img']['tmp_name'], $uploadfile)) {
+  $study_img = $uploadfile;
+  move_uploaded_file($tmp_name, $uploaddir);
 }
 
-if($fileType == 'image') {
-  if($extStatus) {
-    $resFile = "./img/{$_FILES['study_img']['name']}";
-    $imageUpload = move_uploaded_file($tempFile, $resFile);
+$uploadfile = $uploaddir.$_FILES['item_content']['name'];
 
-    if($imageUpload == true) {
-      echo "파일이 정상적으로 업로드 되었습니다. <br>";
-      echo "<img src='{$resFile}' width='100' />";
-    } else {
-      echo "파일 업로드에 실패하였습니다.";
-    }
-  }
-  else {
-    echo "파일 확장자는 jpg, bmp, gif, png 이어야 합니다.";
-    exit;
-  }
-}
-else {
-  echo "이미지 파일이 아닙니다.";
-  exit;
-}
-*/
+$f_name = $_FILES['item_content']['name'];
+$f_type = $_FILES['item_content']['type'];
+$f_size = $_FILES['item_content']['size'];
+$tmp_name = $_FILES['item_content']['tmp_name'];
+$item_content = $uploadfile;
 
-$sql  = "INSERT INTO study (leader, max_mem, category, title, grade, major, how, study_day, start_time, end_time, intro) VALUES ('$leader','$people','$category','$group_name','$grade', '$major', '$how', '$day', '$start', '$end', '$intro');";
+if(move_uploaded_file($_FILES['item_content']['tmp_name'], $uploadfile)) {
+  $item_content = $uploadfile;
+  move_uploaded_file($tmp_name, $uploaddir);
+}
+
+$sql  = "INSERT INTO study (leader, max_mem, category, title, grade, major, how, study_day, start_time, end_time, intro, study_img) VALUES ('$leader','$people','$category','$group_name','$grade', '$major', '$how', '$day', '$start', '$end', '$intro', '$study_img');";
 $result = mysqli_query($conn, $sql);
 if($result==true){
 ?>
