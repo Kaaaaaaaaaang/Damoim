@@ -22,7 +22,7 @@
 			<?php
 				session_start();
 				if(isset($_SESSION['user_name'])){?>
-					<button onclick="location.href='recommand.html'">모임 추천받기</button>
+					<button onclick="location.href='logout.php'">로그아웃</button>
 				<?php
 				}else{
 				?>
