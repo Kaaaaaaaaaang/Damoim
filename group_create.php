@@ -57,7 +57,7 @@ $study_img = $uploadfile;
 
 if(move_uploaded_file($_FILES['study_img']['tmp_name'], $uploadfile)){
     $study_img = $uploadfile;
-    move_uploaded_file($tmp_name,$uploaddir)
+    move_uploaded_file($tmp_name,$uploaddir);
 }
 
 $uploadfile = $uploaddir.$_FILES['item_content']['name'];
@@ -69,7 +69,7 @@ $item_content = $uploadfile;
 
 if(move_uploaded_file($_FILES['item_content']['tmp_name'], $uploadfile)){
     $item_content = $uploadfile;
-    move_uploaded_file($tmp_name,$uploaddir)
+    move_uploaded_file($tmp_name,$uploaddir);
 }
 
 $sql  = "INSERT INTO study (leader, max_mem, category, title, grade, major, how, study_day, start_time, end_time, intro, img_path, img_content) VALUES ('$leader','$people','$category','$group_name','$grade', '$major', '$how', '$day', '$start', '$end', '$intro', '$study_img', '$item_content');";
