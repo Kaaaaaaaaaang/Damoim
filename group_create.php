@@ -40,9 +40,70 @@ foreach($grade_array as $value) {
 $grade = $result;
 
 */
-?>
+/*
+var_dump($_FILES);
 
+$tempFile = $_FILES['study_img']['tmp_name'];
+
+$fileTypeExt = explode("/", $_FILES['imgFile']['type']);
+
+$fileExt = $fileExt[0];
+
+$extStatus = false;
+
+switch($fileExt) {
+
+  case 'jpeg':
+  case 'jpg' :
+  case 'gif' :
+  case 'bmp' :
+  case 'png' :
+    $extStatus = true;
+    break;
+  default :
+  echo "이미지 전용 확장자(jpg, bmp, gif, png)외에는 사용이 불가능합니다.";
+  break;
+
+}
+
+if($fileType == 'image') {
+  if($extStatus) {
+    $resFile = "./img/{$_FILES['study_img']['name']}";
+    $imageUpload = move_uploaded_file($tempFile, $resFile);
+
+    if($imageUpload == true) {
+      echo "파일이 정상적으로 업로드 되었습니다. <br>";
+      echo "<img src='{$resFile}' width='100' />";
+    } else {
+      echo "파일 업로드에 실패하였습니다.";
+    }
+  }
+  else {
+    echo "파일 확장자는 jpg, bmp, gif, png 이어야 합니다.";
+    exit;
+  }
+}
+else {
+  echo "이미지 파일이 아닙니다.";
+  exit;
+}
+*/
+
+$sql  = "INSERT INTO study (leader, max_mem, category, title, grade, major, how, study_day, start_time, end_time, intro) VALUES ('$leader','$people','$category','$group_name','$grade', '$major', '$how', '$day', '$start', '$end', '$intro');";
+$result = mysqli_query($conn, $sql);
+if($result==true){
+?>
+  <script>
+      alert("그룹 생성이 완료되었습니다.");
+      location.href='group_lookup.html';
+  </script>
+<?php
+}else{
+?>
 <script>
-    alert("그룹 생성이 완료되었습니다.");
-    location.href='group_lookup'.html';
-</script>
+    alert("땡 실패");
+    location.href='group_lookup.html';
+</script>   
+<?php
+}
+?>
