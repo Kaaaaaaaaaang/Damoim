@@ -84,7 +84,8 @@ if($result==true){
 }else{
 ?>
 <script>
-    alert("$_FILES");
+    error_reporting(E_ALL);
+    ini_set('display_errors', '1');
     location.href='group_lookup.html';
 </script>   
 <?php
