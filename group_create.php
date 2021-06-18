@@ -43,7 +43,7 @@ foreach($major_array as $value) {
 
 $major = $result;
 
-$major_array = array($major);
+$major_array = array($day);
 
 foreach($day_array as $value) {
   $result = implode("|", $value);
