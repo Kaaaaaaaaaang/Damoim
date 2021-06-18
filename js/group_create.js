@@ -5,6 +5,7 @@ function handleOnInput(el, maxlength) {
   }
 }
 
+/*
 var group_hashtag = document.getElementById('group_hashtag').innerHTML; // html 안에 'group_hashtag'라는 아이디를 group_hashtag 라는 변수로 정의한다.
 
 var splitedArray = group_hashtag.split(' '); // 공백을 기준으로 문자열을 자른다.
@@ -21,4 +22,4 @@ for(var word in splitedArray)
 }
 document.getElementById('group_hashtag').innerHTML = linkedContent;
 
- 
+*/
