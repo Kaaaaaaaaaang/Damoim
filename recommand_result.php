@@ -48,7 +48,7 @@
         <h3>|</h3>
         <a href="group_create.html"><h3 id="create">그룹생성</h3></a>
         <h3>|</h3>
-        <a href="recommand.html"><h3 id="recommand">추천받기</h3></a>
+        <a href="recommand.php"><h3 id="recommand">추천받기</h3></a>
       </div>
 	</div>
 </body>

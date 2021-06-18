@@ -1,8 +1,14 @@
 <?php
 session_start();
+include "db.php";
 if(!isset($_SESSION['user_name'])){
     echo("<script>location.href='login.html';</script>"); 
 }
+
+$q_count = $_GET['q_count'];
+$sql = "SELECT * FROM reccommand WHERE num =".$q_count;
+$result=mysqli_query($conn, $sql);
+$row = mysqli_fetch_array($result);
 ?>
 
 <!DOCTYPE html>
@@ -18,22 +24,33 @@ if(!isset($_SESSION['user_name'])){
 	<div class="container">
      	<div class="background_box"></div>
      	<div class="container2">
-     		<h3 id="question">몇 학년 이신가요?</h3>
+     		<h3 id="question"><?php echo $row['Q']?></h3>
                <hr>
      		<div class="radio-wrap">
                  <input type="radio" name="answer" id="one"/>
-                 <label for="one">1학년</label>
+                 <label for="one"><?php echo $row['A1']?></label>
                </div>
                <div class="radio-wrap">
                  <input type="radio" name="answer" id="two"/>
-                 <label for="two">2학년</label>
+                 <label for="two"><?php echo $row['A2']?></label>
                </div>
                <div class="radio-wrap">
                  <input type="radio" name="answer" id="three"/>
-                 <label for="three">3학년</label>
+                 <label for="three"><?php echo $row['A3']?></label>
                </div>
                <div class="button_box">
-     		   <button onclick="location.href='recommand_result.html'">Next &nbsp; →</button>
+                 <?php
+                    $query = "SELECT * FROM reccommand";
+                    $data = mysqli_query($conn, $query);
+                    if(mysqli_num_rows($data)==$q_count){
+                    ?>
+                    <button onclick="location.href='recommand_result.php'">result &nbsp; →</button>
+                      <?php
+                    }else{
+                      ?><button onclick="location.href='recommand.php?q_count=<?php echo ($row['num']+1);?>'">Next &nbsp; →</button><?php
+                    }                    
+                 ?>
+     		          
                </div>
      	</div>
        <div class="menu">
@@ -44,7 +61,7 @@ if(!isset($_SESSION['user_name'])){
         <h3>|</h3>
         <a href="group_create.html"><h3 id="create">그룹생성</h3></a>
         <h3>|</h3>
-        <a href="recommand.html"><h3 id="recommand">추천받기</h3></a>
+        <a href="recommand.php"><h3 id="recommand">추천받기</h3></a>
       </div>
 	</div>
 </body>
