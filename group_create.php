@@ -57,7 +57,7 @@ if(move_uploaded_file($_FILES['study_img']['tmp_name'], $uploadfile)) {
   move_uploaded_file($tmp_name, $uploaddir);
 }
 
-$sql  = "INSERT INTO study (leader, max_mem, category, title, grade, major, how, study_day, start_time, end_time, intro, study_img) VALUES ('$leader','$people','$category','$group_name','$grade', '$major', '$how', '$day', '$start', '$end', '$intro', '$study_img');";
+$sql  = "INSERT INTO study (leader, max_mem, category, title, grade, major, how, study_day, start_time, end_time, intro, img_path) VALUES ('$leader','$people','$category','$group_name','$grade', '$major', '$how', '$day', '$start', '$end', '$intro', '$study_img');";
 $result = mysqli_query($conn, $sql);
 if($result==true){
 ?>
