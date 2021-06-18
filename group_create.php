@@ -35,6 +35,22 @@ foreach($grade_array as $value) {
 
 $grade = $result;
 
+$major_array = array($major);
+
+foreach($major_array as $value) {
+  $result = implode("|", $value);
+}
+
+$major = $result;
+
+$major_array = array($major);
+
+foreach($day_array as $value) {
+  $result = implode("|", $value);
+}
+
+$day = $result;
+
 /*
 var_dump($_FILES);
 
