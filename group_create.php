@@ -46,19 +46,33 @@ foreach($day_array as $value) {
 $day = $result;
 
 $uploaddir = '../images/';
+
+
 $uploadfile = $uploaddir.$_FILES['study_img']['name'];
 $f_name = $_FILES['study_img']['name'];
 $f_type = $_FILES['study_img']['type'];
 $f_size = $_FILES['study_img']['size'];
-$f_size = $_FILES['study_img']['tmp_name'];
+$tmp_name= $_FILES['study_img']['tmp_name'];
 $study_img = $uploadfile;
 
-if(move_uploaded_file($_FILES['study_img']['tmp_name'], $uploadfile)) {
-  $study_img = $uploadfile;
-  move_uploaded_file($tmp_name, $uploaddir);
+if(move_uploaded_file($_FILES['study_img']['tmp_name'], $uploadfile)){
+    $study_img = $uploadfile;
+    move_uploaded_file($tmp_name,$uploaddir)
 }
 
-$sql  = "INSERT INTO study (leader, max_mem, category, title, grade, major, how, study_day, start_time, end_time, intro, img_path) VALUES ('$leader','$people','$category','$group_name','$grade', '$major', '$how', '$day', '$start', '$end', '$intro', '$study_img');";
+$uploadfile = $uploaddir.$_FILES['item_content']['name'];
+$f_name = $_FILES['item_content']['name'];
+$f_type = $_FILES['item_content']['type'];
+$f_size = $_FILES['item_content']['size'];
+$tmp_name= $_FILES['item_content']['tmp_name'];
+$item_content = $uploadfile;
+
+if(move_uploaded_file($_FILES['item_content']['tmp_name'], $uploadfile)){
+    $item_content = $uploadfile;
+    move_uploaded_file($tmp_name,$uploaddir)
+}
+
+$sql  = "INSERT INTO study (leader, max_mem, category, title, grade, major, how, study_day, start_time, end_time, intro, img_path, img_content) VALUES ('$leader','$people','$category','$group_name','$grade', '$major', '$how', '$day', '$start', '$end', '$intro', '$study_img', '$item_content');";
 $result = mysqli_query($conn, $sql);
 if($result==true){
 ?>
@@ -70,7 +84,7 @@ if($result==true){
 }else{
 ?>
 <script>
-    alert("땡 실패");
+    alert("$_FILES");
     location.href='group_lookup.html';
 </script>   
 <?php
