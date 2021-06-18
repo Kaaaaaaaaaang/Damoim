@@ -15,10 +15,15 @@ if(!isset($_SESSION['user_name'])) echo("<script>location.href='login.html';</sc
 <body style="overflow-x:hidden;">
      	<div class="container2" style="float: left;">
      		<div class="box" style="background: #BDBDBD;"><img id="profile_img" src="img/sample_proflie.png"></div>
-     		<h3 id="mypage_name">다모임</h3>
+               <?php
+                    $sql = "SELECT * FROM user WHERE id ='".$_SESSION['user_id']."'";
+                    $result=mysqli_query($conn, $sql)or die(mysqli_error($conn));
+                    $row=mysqli_fetch_array($result);
+               ?>
+     		<h3 id="mypage_name"><?php echo $row['id']?></h3>
      		<h3 id="mypage_school">미림여자정보과학고등학교</h3>
-     		<h3 id="mypage_hakgwa">뉴미디어소프트웨어과</h3>
-     		<h3 id="mypage_email">s2019s15@e-mirim.hs.kr</h3><br>
+     		<h3 id="mypage_hakgwa"><?php echo $row['major']?></h3>
+     		<h3 id="mypage_email"><?php echo $row['email']?></h3><br>
                <div class="mypage_about_box">
                     <p id="mypage_about">나를 소개 해봐요.</p>
                </div>
@@ -28,22 +33,31 @@ if(!isset($_SESSION['user_name'])) echo("<script>location.href='login.html';</sc
      	</div>
      	<div class="group_list" style="float: left;">
                <?php
-               $sql = "select COUNT(*) FROM study where member";
-               $cnt=mysqli_query($conn, $sql);
-               $row= $cnt->fetch_row();
-               $max=$row[0];
-               for($i=0; $i<4; $i++){
+
+               $sql1 = "select COUNT(*) FROM study where member like '%".$_SESSION['user_id']."%'";
+               $cnt1=mysqli_query($conn, $sql1);
+
+               $sql = "select * FROM study where member like '%".$_SESSION['user_id']."%'";
+               $result=mysqli_query($conn, $sql);
+               $row=mysqli_fetch_array($result);
+               if($cnt == 0){
+                    ?>
+                    <h1>참여하는 모임이 없습니다.</h1>
+                    <?php
+               }else{
+                    for($i=0; $i<$cnt1; $i++){
                ?>
                     <figure class="group_about_box">
           		<img id="group_img" src="img/group_img1.png">
                     <figcaption>
                          <br>
-                        <h3 id="group_title">그룹명임</h3><br>
-                        <p id="gro up_about">그룹 설명란인데요 그룹 설명란인데요그룹 설명란인데요 그룹 설명란인데요그룹 설명란인데요 </p>
+                        <h3 id="group_title"><?php $row['title'][$i]?></h3><br>
+                        <p id="gro up_about"><?php $row['intro'][$i]?></p>
                     </figcaption>
                     <a href="my_group.html"></a>
                </figure>
                <?php
+                    }
                     
                }
                ?>
