@@ -26,20 +26,15 @@ else if($category == "general_subject") $category = "인문 과목 스터디";
 if($how == "online") $how = "온라인";
 else if($how == "offline") $how = "오프라인";
 
-/*
+
 $grade_array = array($grade);
 
 foreach($grade_array as $value) {
   $result = implode("|", $value);
-
-  echo "<pre>";
-  var_dump($result);
-  echo "</pre>";
 }
 
 $grade = $result;
 
-*/
 /*
 var_dump($_FILES);
 
