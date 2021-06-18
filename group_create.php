@@ -44,7 +44,7 @@ foreach($day_array as $value) {
 }
 $day = $result;
 
-$uploaddir = '../user/images/';
+$uploaddir = '../images/';
 $uploadfile = $uploaddir.$_FILES['study_img']['name'];
 $f_name = $_FILES['study_img']['name'];
 $f_type = $_FILES['study_img']['type'];
@@ -54,19 +54,6 @@ $study_img = $uploadfile;
 
 if(move_uploaded_file($_FILES['study_img']['tmp_name'], $uploadfile)) {
   $study_img = $uploadfile;
-  move_uploaded_file($tmp_name, $uploaddir);
-}
-
-$uploadfile = $uploaddir.$_FILES['item_content']['name'];
-
-$f_name = $_FILES['item_content']['name'];
-$f_type = $_FILES['item_content']['type'];
-$f_size = $_FILES['item_content']['size'];
-$tmp_name = $_FILES['item_content']['tmp_name'];
-$item_content = $uploadfile;
-
-if(move_uploaded_file($_FILES['item_content']['tmp_name'], $uploadfile)) {
-  $item_content = $uploadfile;
   move_uploaded_file($tmp_name, $uploaddir);
 }
 
