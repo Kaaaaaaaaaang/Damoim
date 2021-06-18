@@ -45,35 +45,21 @@ foreach($day_array as $value) {
 }
 $day = $result;
 
-$uploaddir = '../images/';
+if(isset($_POST['submit'])) {
+  $name = $_FILES['file']['name'];
+  $target_dir = "upload/";
+  $target_file = $target_dir.basename($_FILES["file"]["name"]);
+  $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
 
+  $extensions_arr = array("jpg", "jpeg", "png", "gif");
 
-$uploadfile = $uploaddir.$_FILES['study_img']['name'];
-$f_name = $_FILES['study_img']['name'];
-$f_type = $_FILES['study_img']['type'];
-$f_size = $_FILES['study_img']['size'];
-$tmp_name= $_FILES['study_img']['tmp_name'];
-$study_img = $uploadfile;
+  if(in_array($imageFileType, $extensions_arr)) {
+    $sql  = "INSERT INTO study (leader, max_mem, category, title, grade, major, how, study_day, start_time, end_time, intro, img_path, img_content) VALUES ('$leader','$people','$category','$group_name','$grade', '$major', '$how', '$day', '$start', '$end', '$intro', '$study_img', '$item_content');";
 
-if(move_uploaded_file($_FILES['study_img']['tmp_name'], $uploadfile)){
-    $study_img = $uploadfile;
-    move_uploaded_file($tmp_name,$uploaddir);
+    $result = mysqli_query($conn, $sql);
+  }
 }
 
-$uploadfile = $uploaddir.$_FILES['item_content']['name'];
-$f_name = $_FILES['item_content']['name'];
-$f_type = $_FILES['item_content']['type'];
-$f_size = $_FILES['item_content']['size'];
-$tmp_name= $_FILES['item_content']['tmp_name'];
-$item_content = $uploadfile;
-
-if(move_uploaded_file($_FILES['item_content']['tmp_name'], $uploadfile)){
-    $item_content = $uploadfile;
-    move_uploaded_file($tmp_name,$uploaddir);
-}
-
-$sql  = "INSERT INTO study (leader, max_mem, category, title, grade, major, how, study_day, start_time, end_time, intro, img_path, img_content) VALUES ('$leader','$people','$category','$group_name','$grade', '$major', '$how', '$day', '$start', '$end', '$intro', '$study_img', '$item_content');";
-$result = mysqli_query($conn, $sql);
 if($result==true){
 ?>
   <script>
@@ -84,8 +70,7 @@ if($result==true){
 }else{
 ?>
 <script>
-    error_reporting(E_ALL);
-    ini_set('display_errors', '1');
+    alert("땡 탈락");
     location.href='group_lookup.html';
 </script>   
 <?php
