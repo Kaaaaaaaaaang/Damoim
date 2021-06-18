@@ -44,38 +44,48 @@ foreach($day_array as $value) {
 }
 $day = $result;
 
-$uploaddir = "upload/";
+$uploaddir = 'upload/';
+echo $_FILES['study_img']['name']."<br>";
+echo $_FILES['study_img']['type']."<br>";
+echo $_FILES['study_img']['size']."<br>";
+echo $_FILES['study_img']['tmp_name']."<br>";
+echo $_FILES['study_img']['error']."<br>";
+
 $uploadfile = $uploaddir.$_FILES['study_img']['name'];
 $f_name = $_FILES['study_img']['name'];
 $f_type = $_FILES['study_img']['type'];
 $f_size = $_FILES['study_img']['size'];
 $tmp_name= $_FILES['study_img']['tmp_name'];
-$study_img = $uploadfile;
+$img_ad = $uploadfile;
 
-if(move_uploaded_file($_FILES['study_img']['tmp_name'], $uploadfile)) {
-    $study_img = $uploadfile;
-    move_uploaded_file($tmp_name, $uploaddir);
+if(move_uploaded_file($_FILES['study_img']['tmp_name'], $uploadfile)){
+    $img_ad = $uploadfile;
+    move_uploaded_file($tmp_name,$uploaddir);
 }
+echo $uploadfile;
 
-$sql  = "INSERT INTO study (leader, max_mem, category, title, grade, major, how, study_day, start_time, end_time, intro, img_path) VALUES ('$leader','$people','$category','$group_name','$grade', '$major', '$how', '$day', '$start', '$end', '$intro', '$study_img', '$target_file');";
+$sql  = "INSERT INTO study (leader, max_mem, category, title, grade, major, how, study_day, start_time, end_time, intro, img_path) VALUES ('$leader','$people','$category','$group_name','$grade', '$major', '$how', '$day', '$start', '$end', '$intro', '$img_ad');";
 $result = mysqli_query($conn, $sql);
+?>
+<!--
 if($result==true){
 
-?>
+
   <script>
       alert("그룹 생성이 완료되었습니다.");
       location.href='group_lookup.html';
   </script>
 
-<?php
-}else{
-?>
+//<?php
+//}else{
+//?>
 
 <script>
     alert("땡 탈락");
     location.href='group_lookup.html';
 </script>
 
-<?php
-}
+//<?php
+//}
 ?>
+-->

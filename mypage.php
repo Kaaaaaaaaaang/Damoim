@@ -1,3 +1,8 @@
+<?php
+session_start();
+include "db.php";
+if(!isset($_SESSION['user_name'])) echo("<script>location.href='login.html';</script>"); 
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -22,7 +27,14 @@
      		<span>탈퇴</span>
      	</div>
      	<div class="group_list" style="float: left;">
-               <figure class="group_about_box">
+               <?php
+               $sql = "select COUNT(*) FROM study where member";
+               $cnt=mysqli_query($conn, $sql);
+               $row= $cnt->fetch_row();
+               $max=$row[0];
+               for($i=0; $i<4; $i++){
+               ?>
+                    <figure class="group_about_box">
           		<img id="group_img" src="img/group_img1.png">
                     <figcaption>
                          <br>
@@ -31,32 +43,13 @@
                     </figcaption>
                     <a href="my_group.html"></a>
                </figure>
-               <figure class="group_about_box">
-                    <img id="group_img" src="img/group_img1.png">
-                    <figcaption>
-                         <br>
-                        <h3 id="group_title">그룹명임</h3><br>
-                        <p id="group_about">그룹 설명란인데요 그룹 설명란인데요그룹 설명란인데요 그룹 설명란인데요그룹 설명란인데요 </p>
-                    </figcaption>
-                    <a href="my_group.html"></a>
-               </figure>
-               <figure class="group_about_box">
-                    <img id="group_img" src="img/group_img1.png">
-                    <figcaption><br>
-                        <h3 id="group_title">그룹명임</h3><br>
-                        <p id="group_about">그룹 설명란인데요 그룹 설명란인데요그룹 설명란인데요 그룹 설명란인데요그룹 설명란인데요 </p>
-                    </figcaption>
-                    <a href="my_group.html"></a>
-               </figure>
-              <figure class="group_about_box">
-                    <img id="group_img" src="img/group_img1.png">
-                    <figcaption>
-                         <br>
-                        <h3 id="group_title">그룹명임</h3><br>
-                        <p id="group_about">그룹 설명란인데요 그룹 설명란인데요그룹 설명란인데요 그룹 설명란인데요그룹 설명란인데요 </p>
-                    </figcaption>
-                    <a href="my_group.html"></a>
-               </figure>
+               <?php
+                    
+               }
+               ?>
+
+               
+
      	</div>
           <!--하단 빈공간-->
           <div class="footer"></div>
