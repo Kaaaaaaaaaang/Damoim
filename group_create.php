@@ -44,18 +44,21 @@ foreach($day_array as $value) {
 }
 $day = $result;
 
-if(isset($_POST['submit'])) {
-  $name = $_FILES['study_img']['name'];
-  $target_dir = "upload/";
-  $target_file = $target_dir.basename($_FILES["study_img"]["name"]);
-  $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
-  $extensions_arr = array("jpg", "jpeg", "png", "gif");
-  if(in_array($imageFileType, $extensions_arr)) {
-    $sql  = "INSERT INTO study (leader, max_mem, category, title, grade, major, how, study_day, start_time, end_time, intro, img_path) VALUES ('$leader','$people','$category','$group_name','$grade', '$major', '$how', '$day', '$start', '$end', '$intro', '$study_img', '$target_file');";
-    $result = mysqli_query($conn, $sql);
-  }
+$uploaddir = "upload/";
+$uploadfile = $uploaddir.$_FILES['study_img']['name'];
+$f_name = $_FILES['study_img']['name'];
+$f_type = $_FILES['study_img']['type'];
+$f_size = $_FILES['study_img']['size'];
+$tmp_name= $_FILES['study_img']['tmp_name'];
+$study_img = $uploadfile;
+
+if(move_uploaded_file($_FILES['study_img']['tmp_name'], $uploadfile)) {
+    $study_img = $uploadfile;
+    move_uploaded_file($tmp_name, $uploaddir);
 }
 
+$sql  = "INSERT INTO study (leader, max_mem, category, title, grade, major, how, study_day, start_time, end_time, intro, img_path) VALUES ('$leader','$people','$category','$group_name','$grade', '$major', '$how', '$day', '$start', '$end', '$intro', '$study_img', '$target_file');";
+$result = mysqli_query($conn, $sql);
 if($result==true){
 
 ?>
