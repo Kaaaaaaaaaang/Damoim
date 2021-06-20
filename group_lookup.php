@@ -50,7 +50,7 @@
 			        	<h3 id="group_title">그룹명임</h3><br>
 			        	<p id="group_about">그룹 설명란인데요 그룹 설명란인데요그룹 설명란인데요 그룹 설명란인데요그룹 설명란인데요 </p>
 		          </figcaption>
-		          <a href="group.html"></a>
+		          <a href="group.php"></a>
 	        	</figure>
      			</div>
      			<div class="list_box">
@@ -61,7 +61,7 @@
 			  	      <h3 id="group_title">그룹명임</h3><br>
 			          <p id="group_about">그룹 설명란인데요 그룹 설명란인데요그룹 설명란인데요 그룹 설명란인데요그룹 설명란인데요 </p>
 			        </figcaption>
-			        <a href="group.html"></a>
+			        <a href="group.php"></a>
 		        </figure>
      			</div>
      			<div class="list_box">
@@ -72,7 +72,7 @@
 			        <h3 id="group_title">그룹명임</h3><br>
 			        <p id="group_about">그룹 설명란인데요 그룹 설명란인데요그룹 설명란인데요 그룹 설명란인데요그룹 설명란인데요 </p>
 			      </figcaption>
-			      <a href="group.html"></a>
+			      <a href="group.php"></a>
 		      	</figure>
      			</div>
      			<div class="list_box">
@@ -83,7 +83,7 @@
 			          <h3 id="group_title">그룹명임</h3><br>
 			          <p id="group_about">그룹 설명란인데요 그룹 설명란인데요그룹 설명란인데요 그룹 설명란인데요그룹 설명란인데요 </p>
 			        </figcaption>
-			        <a href="group.html"></a>
+			        <a href="group.php"></a>
 		        </figure>
      			</div>
      			<div class="list_box">
@@ -94,7 +94,7 @@
 			          <h3 id="group_title">그룹명임</h3><br>
 			          <p id="group_about">그룹 설명란인데요 그룹 설명란인데요그룹 설명란인데요 그룹 설명란인데요그룹 설명란인데요 </p>
 			        </figcaption>
-			        <a href="group.html"></a>
+			        <a href="group.php"></a>
 		        </figure>
      			</div>
      		</div>
@@ -103,13 +103,13 @@
       <div class="footer"></div>
       <div class="menu">
         <a href="main.php"><img id="logo" src="img/logo.png"></a>
-        <a href="mypage.html"><h3 id="mypage">마이페이지</h3></a>
+        <a href="mypage.php"><h3 id="mypage">마이페이지</h3></a>
 			 	<h3>|</h3>
-        <a href="group_lookup.html"><h3 id="lookup">그룹조회</h3></a>
+        <a href="group_lookup.php"><h3 id="lookup">그룹조회</h3></a>
         <h3>|</h3>
-        <a href="group_create.html"><h3 id="create">그룹생성</h3></a>
+        <a href="group_create.php"><h3 id="create">그룹생성</h3></a>
         <h3>|</h3>
-        <a href="recommand.html"><h3 id="recommand">추천받기</h3></a>
+        <a href="recommand.php"><h3 id="recommand">추천받기</h3></a>
       </div>
 		</div>
 	</div>
