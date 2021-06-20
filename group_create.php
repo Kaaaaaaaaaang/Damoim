@@ -92,7 +92,7 @@ if(!isset($_SESSION['user_name'])) echo("<script>location.href='login.html';</sc
 					<span>그룹 사진</span>
 					<input type="file" id="group_img_src" name="study_img"></input>
 				</div>
-     		<button id="group_create_btn" onclick="location.href='group_create2.html'" style="margin-bottom: 30%;" type="submit">모임 생성하기</button>
+     		<button id="group_create_btn" onclick="location.href='group_create2.php'" style="margin-bottom: 30%;" type="submit">모임 생성하기</button>
      	</form>
 		</div>
 		<div class="menu">
