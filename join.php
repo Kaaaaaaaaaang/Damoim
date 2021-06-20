@@ -8,7 +8,8 @@ $email=$_POST['userEmail'];
 $major=$_POST['userMajor'];
 $grade = $_POST['userGrade'];
 
-$sql  = "INSERT INTO user (id,pass,name,email,major, grade) VALUES ('$id','$pw','$name','$email','$major', '$grade')";
+$sql  = "INSERT INTO user (id,pass,name,email,major,grade,img_path,intro) VALUES ('$id','$pw','$name','$email','$major','$grade','./img/sample_profile.png','나를 소개하세요.')";
+
 $result = mysqli_query($conn, $sql);
 if($result==true){
 ?>
