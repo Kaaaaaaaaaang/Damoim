@@ -38,7 +38,7 @@ if(!isset($_SESSION['user_name'])) echo("<script>location.href='login.html';</sc
                             <h1>Name</h1>
                             <input type="text" name="name" id="name" value="<?php echo $row['name']?>">
                             <h1>Department</h1>
-                            <h4 id="major" value="<?php echo $row['major']?>"></h4>
+                            <h4 id="major"><?php echo $row['major']?></h4>
                             <h1>Email</h1>
                             <input type="email" name="email" id="email" style="margin-bottom: 4%;" value="<?php echo $row['email']?>">
                             <h1>About me</h1>
