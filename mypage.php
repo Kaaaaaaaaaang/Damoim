@@ -20,12 +20,12 @@ if(!isset($_SESSION['user_name'])) echo("<script>location.href='login.html';</sc
                     $result=mysqli_query($conn, $sql)or die(mysqli_error($conn));
                     $row=mysqli_fetch_array($result);
                ?>
-     		<h3 id="mypage_name"><?php echo $row['id']?></h3>
+     		<h3 id="mypage_name"><?php echo $row['name']?></h3>
      		<h3 id="mypage_school">미림여자정보과학고등학교</h3>
      		<h3 id="mypage_hakgwa"><?php echo $row['major']?></h3>
      		<h3 id="mypage_email"><?php echo $row['email']?></h3><br>
                <div class="mypage_about_box">
-                    <p id="mypage_about">나를 소개 해봐요.</p>
+                    <p id="mypage_about"><?php echo $row['intro']?></p>
                </div>
      		<a href="mypage_edit.php"><span>수정</span></a>
      		<span>|</span>
@@ -34,25 +34,25 @@ if(!isset($_SESSION['user_name'])) echo("<script>location.href='login.html';</sc
      	<div class="group_list" style="float: left;">
                <?php
 
-               $sql1 = "select COUNT(*) FROM study where member like '%".$_SESSION['user_id']."%'";
-               $cnt1=mysqli_query($conn, $sql1);
+               $sql1 = "select COUNT(*) FROM study where member in ".$_SESSION['user_id'];
+               $cnt=mysqli_query($conn, $sql1);
 
-               $sql = "select * FROM study where member like '%".$_SESSION['user_id']."%'";
+               //$sql = "select * FROM study where member like '%".$_SESSION['user_id']."%'";
+               $sql = "select * FROM study where member in ".$_SESSION['user_id'];
                $result=mysqli_query($conn, $sql);
-               $row=mysqli_fetch_array($result);
-               if($cnt1 == 0){
+               if($cnt == 0){
                     ?>
                     <h1 id="not_moim">참여하는 모임이 없습니다.</h1>
                     <?php
                }else{
-                    for($i=0; $i<$cnt1; $i++){
+                    while($row = mysqli_fetch_array($result)){
                ?>
                     <figure class="group_about_box">
-          		<img id="group_img" src="img/group_img1.png">
+          		<img id="group_img" src="<? echo $row['img_path'][$i]; ?>">
                     <figcaption>
                          <br>
-                        <h3 id="group_title"><?php $row['title'][$i]?></h3><br>
-                        <p id="gro up_about"><?php $row['intro'][$i]?></p>
+                        <h3 id="group_title"><?php echo $row['title'][$i];?></h3><br>
+                        <p id="gro up_about"><?php echo $row['intro'][$i];?></p>
                     </figcaption>
                     <a href="my_group.html"></a>
                </figure>
