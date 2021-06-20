@@ -22,7 +22,7 @@
               <h3 id="group_title">그룹명임</h3><br>
               <p id="group_about">그룹 설명란인데요 그룹 설명란인데요그룹 설명란인데요 그룹 설명란인데요그룹 설명란인데요 </p>
             </figcaption>
-            <a href="group.html"></a>
+            <a href="group.php"></a>
           </figure>
           <p style="float: left;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p><h2 id="moim_name1">고양이 모임</h2>
         </div>
@@ -34,7 +34,7 @@
               <h3 id="group_title">그룹명임</h3><br>
               <p id="group_about">그룹 설명란인데요 그룹 설명란인데요그룹 설명란인데요 그룹 설명란인데요그룹 설명란인데요</p>
             </figcaption>
-            <a href="group.html"></a>
+            <a href="group.php"></a>
           </figure>
           <p style="float: right;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p><h2 id="moim_name2">모이는 모임</h2>
         </div>

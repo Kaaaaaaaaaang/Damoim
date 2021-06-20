@@ -17,15 +17,15 @@ if(!isset($_SESSION['user_name'])) echo("<script>location.href='login.html';</sc
 <body>
 	<div class="container">
      	<div class="container2">
-     		<form method="POST" action="group_create.php">
+     		<form method="post" action="group_create2.php"  enctype="multipart/form-data">
 			  <select name="people" style="color: #000000; background-color: #00000000; float: left; margin-left: 4.7%;">
 			    <option value="none" style="color: #000000;">모임 최대 인원수</option>
 			    <option value="1" style="color: #000000;">1명</option>
 			    <option value="2" style="color: #000000;">2명</option>
 			    <option value="3" style="color: #000000;">3명</option>
-					<option value="4" style="color: #000000;">4명</option>
-					<option value="5" style="color: #000000;">5명</option>
-					<option value="6" style="color: #000000;">6명</option>
+				<option value="4" style="color: #000000;">4명</option>
+				<option value="5" style="color: #000000;">5명</option>
+				<option value="6" style="color: #000000;">6명</option>
 			    <option value="7" style="color: #000000;">7명</option>
 			    <option value="8" style="color: #000000;">8명</option>
 			    <option value="9" style="color: #000000;">9명</option>
@@ -92,18 +92,18 @@ if(!isset($_SESSION['user_name'])) echo("<script>location.href='login.html';</sc
 					<span>그룹 사진</span>
 					<input type="file" id="group_img_src" name="study_img"></input>
 				</div>
-     		<button id="group_create_btn" onclick="location.href='login.html'" style="margin-bottom: 30%;" type="submit">모임 생성하기</button>
+     		<button id="group_create_btn" onclick="location.href='group_create2.html'" style="margin-bottom: 30%;" type="submit">모임 생성하기</button>
      	</form>
 		</div>
 		<div class="menu">
 			<a href="main.php"><img id="logo" src="img/logo.png"></a>
-			<a href="mypage.html"><h3 id="mypage">마이페이지</h3></a>
+			<a href="mypage.php"><h3 id="mypage">마이페이지</h3></a>
 			<h3>|</h3>
-			<a href="group_lookup.html"><h3 id="lookup">그룹조회</h3></a>
+			<a href="group_lookup.php"><h3 id="lookup">그룹조회</h3></a>
 			<h3>|</h3>
-			<a href="group_create.html"><h3 id="create">그룹생성</h3></a>
+			<a href="group_create.php"><h3 id="create">그룹생성</h3></a>
 			<h3>|</h3>
-			<a href="recommand.html"><h3 id="recommand">추천받기</h3></a>
+			<a href="recommand.php"><h3 id="recommand">추천받기</h3></a>
 		</div>
 	</div>
 	<script type="text/javascript" src="js/group_create.js"></script>

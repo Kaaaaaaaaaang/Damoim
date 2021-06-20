@@ -1,13 +1,14 @@
 <?php
 
 include "db.php";
+session_start();
 
 # 리더 : 로그인 해 있는 사람, 최대 인원 수 : people, 카테고리 : category
 # 그룹 명 : group_name, 가입 학년 : grade[], 가입 학과 : major[]
 # 모임 방법 : how, 모임 날짜 : day[], 시작 시간 : start, 끝나는 시간 : end
 # 그룹 소개 : intro, 사진 : study_img
 
-$leader = $_GET['userID'];
+$leader = $_SESSION['user_id'];
 $people = $_POST['people'];
 $category = $_POST['category'];
 $group_name = $_POST['group_name'];
@@ -71,16 +72,16 @@ if($result==true){
 ?>
   <script>
       alert("그룹 생성이 완료되었습니다.");
-      location.href='group_lookup.html';
+      location.href='group_lookup.php';
   </script>
 
 <?php
-} else{
+}else{
 ?>
 
 <script>
-    alert("땡 탈락");
-    location.href='group_lookup.html';
+    alert("그룹 생성에 실패했습니다.");
+    location.href='group_lookup.php';
 </script>
 
 <?php

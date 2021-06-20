@@ -27,7 +27,7 @@ if(!isset($_SESSION['user_name'])) echo("<script>location.href='login.html';</sc
                <div class="mypage_about_box">
                     <p id="mypage_about">나를 소개 해봐요.</p>
                </div>
-     		<a href="mypage_edit.html"><span>수정</span></a>
+     		<a href="mypage_edit.php"><span>수정</span></a>
      		<span>|</span>
      		<span>탈퇴</span>
      	</div>

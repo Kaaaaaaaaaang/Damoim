@@ -1,3 +1,9 @@
+<?php
+session_start();
+include "db.php";
+if(!isset($_SESSION['user_name'])) echo("<script>location.href='login.html';</script>"); 
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,13 +15,19 @@
 </head>
 <body style="overflow-x:hidden;">
      	<div class="container">
+            <?php
+                $sql = "SELECT * FROM user WHERE id ='".$_SESSION['user_id']."'";
+                $result=mysqli_query($conn, $sql)or die(mysqli_error($conn));
+                $row=mysqli_fetch_array($result);
+            ?>
             <div class="container2">
                 <!-- 현재 프로필 -->
                 <div class="now_profile">
                     <img id="profile_img" src="img/sample_proflie.png">
-                    <h3 id="mypage_name">다모임</h3>
-     		        <h3 id="mypage_hakgwa">뉴미디어소프트웨어과</h3>
+                    <h3 id="mypage_name"><?php echo $row['name']?></h3>
+     		        <h3 id="mypage_hakgwa"><?php echo $row['major']?></h3>
                 </div>
+                
                 <!-- 프로필 수정 박스 -->
                 <div class="edit_profile_box">
                     <h1>Public profile</h1>
@@ -24,19 +36,18 @@
                     <form>
                         <div class="edit_profile_info_box">
                             <h1>Name</h1>
-                            <input type="text" name="name" id="name" value="다모임">
+                            <input type="text" name="name" id="name" value="<?php echo $row['name']?>">
                             <h1>Department</h1>
-                            <select name="hakgwa" style="background-color: #00000000;">
+                            <select name="major" style="background-color: #00000000;">
                                 <option value="none" style="color: #000000;">학과</option>
                                 <option value="soft" style="color: #000000;">뉴미디어소프트웨어과</option>
                                 <option value="web" style="color: #000000;">뉴미디어웹솔루션과</option>
                                 <option value="design" style="color: #000000;">뉴미디어디자인과</option>
                             </select><br>
                             <h1>Email</h1>
-                            <input type="email" name="email" id="email" value="s2019s15@e-mirim.hs.kr" style="margin-bottom: 0%;">
-                            <input type="button" name="emailok" value="인증하기">
+                            <input type="email" name="email" id="email" style="margin-bottom: 4%;" value="<?php echo $row['email']?>">
                             <h1>About me</h1>
-                            <textarea id="about_me" name="intro">나를 소개 해봐요.</textarea>
+                            <textarea id="about_me" name="intro"></textarea>
                             <button type="submit" id="Update_profile_btn" onclick="location.href='mypage.php'">Update profile</button><br><br>
                         </div>
                         <!-- 프로필 사진 수정 박스 -->

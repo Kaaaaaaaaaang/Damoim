@@ -32,6 +32,9 @@
 		    <option value="major" style="color: #000000;">전공과목 스터디</option>
 		    <option value="human" style="color: #000000;">인문과목 스터디</option>
 		  </select>
+			<div class="layout_group_title_box">
+				<input type="text" name="group_name" id="group_name" placeholder="모임명" style="color: #000000;">
+				</div>
 			<div class="layout_box">
 				<span>가입 가능 학년</span>
 				<div class="layout">
@@ -82,12 +85,6 @@
 						<span style="margin-left: 0%;">시</span>
 					</div>
 				</div>
-				<div class="layout_group_title_box">
-				<input type="text" name="group_name" id="group_name" placeholder="모임명" style="color: #000000;">
-				</div>
-				<div class="layout_hashtag_box">
-					<input type="text" name="group_hashtag" id="group_hashtag" placeholder="#">
-				</div>
 				<div class="layout_group_about_box">
 					<span>모임 설명</span>
 					<br>
@@ -95,8 +92,7 @@
 				</div>
 				<div class="layout_group_img">
 					<span>그룹 사진</span>
-					<span id="group_img_src">샘플 이미지.png</span>
-					<button id="group_img_button">추가</button>
+					<input type="file" id="group_img_src" name="study_img"></input>
 				</div>
      		<button id="group_create_btn" onclick="location.href='my_group.html'" >모임 수정하기</button>
     			<button id="group_delete_btn" onclick="location.href='my_group.html'" style="margin-bottom: 30%;">모임 삭제하기</button>
@@ -104,13 +100,13 @@
 		</div>
 		<div class="menu">
 			<a href="main.php"><img id="logo" src="img/logo.png"></a>
-			<a href="mypage.html"><h3 id="mypage">마이페이지</h3></a>
+			<a href="mypage.php"><h3 id="mypage">마이페이지</h3></a>
 			<h3>|</h3>
-			<a href="group_lookup.html"><h3 id="lookup">그룹조회</h3></a>
+			<a href="group_lookup.php"><h3 id="lookup">그룹조회</h3></a>
 			<h3>|</h3>
-			<a href="group_create.html"><h3 id="create">그룹생성</h3></a>
+			<a href="group_create.php"><h3 id="create">그룹생성</h3></a>
 			<h3>|</h3>
-			<a href="recommand.html"><h3 id="recommand">추천받기</h3></a>
+			<a href="recommand.php"><h3 id="recommand">추천받기</h3></a>
 		</div>
 	</div>
 	<script type="text/javascript" src="js/group_create.js"></script>

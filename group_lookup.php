@@ -11,36 +11,37 @@
 	<div class="container">
     <div class="container2">
     	<span>그룹조회</span>
-    	<div class="category_box">
-				<div class="layout_box">
-					<span>학과</span>
-					<div class="layout">
-						<label><input type="checkbox" name="hakgwa" value="soft"> 소프트웨어과</label>
-				  	<label><input type="checkbox" name="hakgwa" value="web"> 웹솔루션과</label>
-						<label><input type="checkbox" name="hakgwa" value="design"> 디자인과</label>
+		<form method="POST" action="search.php">
+			<div class="category_box">
+					<div class="layout_box">
+						<span>학과</span>
+						<div class="layout" > 
+							<label><input type="checkbox" name="major" value="soft"> 소프트웨어과</label>
+						<label><input type="checkbox" name="major" value="web"> 웹솔루션과</label>
+							<label><input type="checkbox" name="major" value="design"> 디자인과</label>
+						</div>
+					</div>
+					<div class="layout_box">
+						<span>학년</span>
+						<div class="layout">
+							<label><input type="checkbox" name="age" value="one"> 1학년</label>
+						<label><input type="checkbox" name="age" value="two"> 2학년</label>
+							<label><input type="checkbox" name="age" value="three"> 3학년</label>
+						</div>
+					</div>
+					<div class="layout_box">
+						<span>카테고리</span>
+						<div class="layout">
+							<label><input type="checkbox" name="category" value="employment"> 취업 준비</label>
+						<label><input type="checkbox" name="category" value="major"> 전공과목 스터디</label>
+							<label><input type="checkbox" name="category" value="human"> 인문과목 스터디</label>
+						</div>
+					</div>
+					<div class="layout_box">
+						<button id="submitBTN" type="submit">검색</button>		   
 					</div>
 				</div>
-				<div class="layout_box">
-					<span>학년</span>
-					<div class="layout">
-						<label><input type="checkbox" name="age" value="one"> 1학년</label>
-				  	<label><input type="checkbox" name="age" value="two"> 2학년</label>
-						<label><input type="checkbox" name="age" value="three"> 3학년</label>
-					</div>
-				</div>
-				<div class="layout_box">
-					<span>카테고리</span>
-					<div class="layout">
-						<label><input type="checkbox" name="category" value="employment"> 취업 준비</label>
-				  	<label><input type="checkbox" name="category" value="major"> 전공과목 스터디</label>
-						<label><input type="checkbox" name="category" value="human"> 인문과목 스터디</label>
-					</div>
-				</div>
-				<div class="layout_box">
-					<input id="search" type="text" placeholder="검색 할 해시태그(#)를 입력해주세요.">
-					<button id="search_btn"><img src="img/search.png" alt=""></button>		   
-				</div>
-     		</div>
+		</form>
      		<div class="list">
      			<div class="list_box">
      				<figure class="group_about_box">
@@ -50,7 +51,7 @@
 			        	<h3 id="group_title">그룹명임</h3><br>
 			        	<p id="group_about">그룹 설명란인데요 그룹 설명란인데요그룹 설명란인데요 그룹 설명란인데요그룹 설명란인데요 </p>
 		          </figcaption>
-		          <a href="group.html"></a>
+		          <a href="group.php"></a>
 	        	</figure>
      			</div>
      			<div class="list_box">
@@ -61,7 +62,7 @@
 			  	      <h3 id="group_title">그룹명임</h3><br>
 			          <p id="group_about">그룹 설명란인데요 그룹 설명란인데요그룹 설명란인데요 그룹 설명란인데요그룹 설명란인데요 </p>
 			        </figcaption>
-			        <a href="group.html"></a>
+			        <a href="group.php"></a>
 		        </figure>
      			</div>
      			<div class="list_box">
@@ -72,7 +73,7 @@
 			        <h3 id="group_title">그룹명임</h3><br>
 			        <p id="group_about">그룹 설명란인데요 그룹 설명란인데요그룹 설명란인데요 그룹 설명란인데요그룹 설명란인데요 </p>
 			      </figcaption>
-			      <a href="group.html"></a>
+			      <a href="group.php"></a>
 		      	</figure>
      			</div>
      			<div class="list_box">
@@ -83,7 +84,7 @@
 			          <h3 id="group_title">그룹명임</h3><br>
 			          <p id="group_about">그룹 설명란인데요 그룹 설명란인데요그룹 설명란인데요 그룹 설명란인데요그룹 설명란인데요 </p>
 			        </figcaption>
-			        <a href="group.html"></a>
+			        <a href="group.php"></a>
 		        </figure>
      			</div>
      			<div class="list_box">
@@ -94,7 +95,7 @@
 			          <h3 id="group_title">그룹명임</h3><br>
 			          <p id="group_about">그룹 설명란인데요 그룹 설명란인데요그룹 설명란인데요 그룹 설명란인데요그룹 설명란인데요 </p>
 			        </figcaption>
-			        <a href="group.html"></a>
+			        <a href="group.php"></a>
 		        </figure>
      			</div>
      		</div>
@@ -103,13 +104,13 @@
       <div class="footer"></div>
       <div class="menu">
         <a href="main.php"><img id="logo" src="img/logo.png"></a>
-        <a href="mypage.html"><h3 id="mypage">마이페이지</h3></a>
+        <a href="mypage.php"><h3 id="mypage">마이페이지</h3></a>
 			 	<h3>|</h3>
-        <a href="group_lookup.html"><h3 id="lookup">그룹조회</h3></a>
+        <a href="group_lookup.php"><h3 id="lookup">그룹조회</h3></a>
         <h3>|</h3>
-        <a href="group_create.html"><h3 id="create">그룹생성</h3></a>
+        <a href="group_create.php"><h3 id="create">그룹생성</h3></a>
         <h3>|</h3>
-        <a href="recommand.html"><h3 id="recommand">추천받기</h3></a>
+        <a href="recommand.php"><h3 id="recommand">추천받기</h3></a>
       </div>
 		</div>
 	</div>
