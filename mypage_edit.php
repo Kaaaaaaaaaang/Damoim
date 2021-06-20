@@ -43,7 +43,7 @@ if(!isset($_SESSION['user_name'])) echo("<script>location.href='login.html';</sc
                             <input type="email" name="email" id="email" style="margin-bottom: 4%;" value="<?php echo $row['email']?>">
                             <h1>About me</h1>
                             <textarea id="about_me" name="intro"><?php echo $row['intro']?></textarea>
-                            <button type="submit" id="Update_profile_btn">Update profile</button><br><br>
+                            <button type="submit" id="Update_profile_btn" onclick="location.href='profile_update.php'">Update profile</button><br><br>
                         </div>
                         <!-- 프로필 사진 수정 박스 -->
                         <div class="edit_profile_img_box">
