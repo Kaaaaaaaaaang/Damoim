@@ -7,23 +7,23 @@ $id = $_SESSION['user_id'];
 $name = $_POST['name'];
 $email = $_POST['email'];
 $intro = $_POST['intro'];
-$img_path = $_['profile_img'];
+$img_path = $_['img_path'];
 
 $uploaddir = 'profile/';
-echo $_FILES['profile_img']['name']."<br>";
-echo $_FILES['profile_img']['type']."<br>";
-echo $_FILES['profile_img']['size']."<br>";
-echo $_FILES['profile_img']['tmp_name']."<br>";
-echo $_FILES['profile_img']['error']."<br>";
+echo $_FILES['img_path']['name']."<br>";
+echo $_FILES['img_path']['type']."<br>";
+echo $_FILES['img_path']['size']."<br>";
+echo $_FILES['img_path']['tmp_name']."<br>";
+echo $_FILES['img_path']['error']."<br>";
 
-$uploadfile = $uploaddir.$_FILES['profile_img']['name'];
-$f_name = $_FILES['profile_img']['name'];
-$f_type = $_FILES['profile_img']['type'];
-$f_size = $_FILES['profile_img']['size'];
-$tmp_name= $_FILES['profile_img']['tmp_name'];
+$uploadfile = $uploaddir.$_FILES['img_path']['name'];
+$f_name = $_FILES['img_path']['name'];
+$f_type = $_FILES['img_path']['type'];
+$f_size = $_FILES['img_path']['size'];
+$tmp_name= $_FILES['img_path']['tmp_name'];
 $img_path = $uploadfile;
 
-if(move_uploaded_file($_FILES['profile_img']['tmp_name'], $uploadfile)){
+if(move_uploaded_file($_FILES['img_path']['tmp_name'], $uploadfile)){
   $img_path = $uploadfile;
   move_uploaded_file($tmp_name,$uploaddir);
 }
