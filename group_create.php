@@ -33,9 +33,9 @@ if(!isset($_SESSION['user_name'])) echo("<script>location.href='login.html';</sc
 			  </select>
 			  <select name="category" style="color: #000000; background-color: #00000000; margin-left: 5%;">
 			    <option value="none" style="color: #000000;">카테고리</option>
-			    <option value="employment" style="color: #000000;">취업 준비</option>
-			    <option value="programming" style="color: #000000;">전공과목 스터디</option>
-			    <option value="general_subject" style="color: #000000;">인문과목 스터디</option>
+			    <option value="취업 준비" style="color: #000000;">취업 준비</option>
+			    <option value="전공 과목 스터디" style="color: #000000;">전공과목 스터디</option>
+			    <option value="인문 과목 스터디" style="color: #000000;">인문과목 스터디</option>
 			  </select>
 				<div class="layout_group_title_box">
 					<input type="text" name="group_name" id="group_name" placeholder="모임명" style="color: #000000;">
@@ -51,27 +51,27 @@ if(!isset($_SESSION['user_name'])) echo("<script>location.href='login.html';</sc
       	<div class="layout_box">
 					<span>학과</span>
 					<div class="layout">
-						<label><input type="checkbox" name="major[]" value="soft"> 소프트웨어</label>
-	      		<label><input type="checkbox" name="major[]" value="web"> 웹솔루션</label>
-	      		<label><input type="checkbox" name="major[]" value="design"> 디자인</label>
+						<label><input type="checkbox" name="major[]" value="뉴미디어소프트웨어과"> 소프트웨어</label>
+	      		<label><input type="checkbox" name="major[]" value="뉴미디어웹솔루션과"> 웹솔루션</label>
+	      		<label><input type="checkbox" name="major[]" value="뉴미디어디자인과"> 디자인</label>
 	      	</div>
 	    	</div>
 	      <div class="layout_box">
 					<span>모임 방법</span>
 					<div class="layout">
-						<label><input type="checkbox" name="how" value="online"> 온라인</label>
-	      		<label><input type="checkbox" name="how" value="offline"> 오프라인</label>
+						<label><input type="checkbox" name="how" value="온라인"> 온라인</label>
+	      		<label><input type="checkbox" name="how" value="오프라인"> 오프라인</label>
 	      	</div>
 	    	</div>
 	    	<div class="layout_box">
 					<span>모임 날짜</span>
 					<div class="layout">
-						<label><input type="checkbox" name="day[]" value="mon"> 월요일</label>
-	      		<label><input type="checkbox" name="day[]" value="tue"> 화요일</label>
-	      		<label><input type="checkbox" name="day[]" value="wed"> 수요일</label>
-	      		<label><input type="checkbox" name="day[]" value="thu"> 목요일</label>
-	      		<label><input type="checkbox" name="day[]" value="fri"> 금요일</label>
-	      		<label><input type="checkbox" name="day[]" value="weekend"> 주말</label>
+						<label><input type="checkbox" name="day[]" value="월요일"> 월요일</label>
+	      		<label><input type="checkbox" name="day[]" value="화요일"> 화요일</label>
+	      		<label><input type="checkbox" name="day[]" value="수요일"> 수요일</label>
+	      		<label><input type="checkbox" name="day[]" value="목요일"> 목요일</label>
+	      		<label><input type="checkbox" name="day[]" value="금요일"> 금요일</label>
+	      		<label><input type="checkbox" name="day[]" value="주말"> 주말</label>
 	      	</div>
 	      </div>
 	      <div class="layout_box">
