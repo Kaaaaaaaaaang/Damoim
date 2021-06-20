@@ -68,17 +68,14 @@ $sql  = "INSERT INTO study (leader, max_mem, category, title, grade, major, how,
 $result = mysqli_query($conn, $sql);
 
 
-if($result==true){
-?>
-
   <script>
       alert("그룹 생성이 완료되었습니다.");
       location.href='group_lookup.html';
   </script>
 
-<?php
-}else{
-?>
+//<?php
+//}else{
+//?>
 
 <script>
     alert("땡 탈락");
