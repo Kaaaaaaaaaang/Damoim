@@ -18,7 +18,7 @@ if(!isset($_SESSION['user_name'])) echo("<script>location.href='login.html';</sc
 	<div class="container">
      	<div class="container2">
      		<form method="POST" action="group_create.php">
-			  <select name="people" style="color: #000000; background-color: #00000000; float: left; margin-left: 3%;">
+			  <select name="people" style="color: #000000; background-color: #00000000; float: left; margin-left: 4.7%;">
 			    <option value="none" style="color: #000000;">모임 최대 인원수</option>
 			    <option value="1" style="color: #000000;">1명</option>
 			    <option value="2" style="color: #000000;">2명</option>
