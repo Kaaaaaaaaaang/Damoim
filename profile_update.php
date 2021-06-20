@@ -7,7 +7,6 @@ $id = $_SESSION['user_id'];
 $name = $_POST['name'];
 $email = $_POST['email'];
 $intro = $_POST['intro'];
-$img_path = $_['img_path'];
 
 $uploaddir = 'profile/';
 echo $_FILES['img_path']['name']."<br>";
@@ -21,15 +20,15 @@ $f_name = $_FILES['img_path']['name'];
 $f_type = $_FILES['img_path']['type'];
 $f_size = $_FILES['img_path']['size'];
 $tmp_name= $_FILES['img_path']['tmp_name'];
-$img_path = $uploadfile;
+$profile_image = $uploadfile;
 
 if(move_uploaded_file($_FILES['img_path']['tmp_name'], $uploadfile)){
-  $img_path = $uploadfile;
+  $profile_image = $uploadfile;
   move_uploaded_file($tmp_name,$uploaddir);
 }
 echo $uploadfile;
 
-$sql = "UPDATE user SET name='$name', email='$email', intro='$intro' img_path='$img_path' WHERE id='$id'";
+$sql = "UPDATE user SET name='$name', email='$email', img_path='$profile_image', intro='$intro' WHERE id='$id';";
 
 $result = mysqli_query($conn, $sql);
 

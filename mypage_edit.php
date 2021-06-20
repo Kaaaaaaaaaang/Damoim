@@ -48,7 +48,7 @@ if(!isset($_SESSION['user_name'])) echo("<script>location.href='login.html';</sc
                         <!-- 프로필 사진 수정 박스 -->
                         <div class="edit_profile_img_box">
                             <h1>Profile picture</h1>
-                            <img id="profile_img" src="img/sample_proflie.png">
+                            <img id="profile_img" src="<?php echo $row['img_path']?>">
                             <input type="file" id="profile_img_edit_btn" name="img_path">
                             <div class="edit_img_box">
                                 <img src="img/pen.png" onclick="location.href='profile_update.php'">
