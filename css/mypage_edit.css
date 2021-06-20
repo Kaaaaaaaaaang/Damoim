@@ -176,7 +176,7 @@ body {
   border-radius: 70%;
 }
 
-.container .container2 .edit_profile_box .edit_profile_img_box #profile_img_edit_btn {
+.container .container2 .edit_profile_box .edit_profile_img_box .edit_img_box {
   width: 40%;
   height: 25px;
   margin-left: 30%;
@@ -187,11 +187,13 @@ body {
   border-radius: 5px;
   font-size: 1em;
   font-weight: 100;
+  cursor: pointer;
 }
 
-.container .container2 .edit_profile_box .edit_profile_img_box #profile_img_edit_btn img{
+.container .container2 .edit_profile_box .edit_profile_img_box .edit_img_box img{
   width: 18%;
   vertical-align: middle;
+  margin-left: 25%;
 }
 
 select:focus { outline: none; }

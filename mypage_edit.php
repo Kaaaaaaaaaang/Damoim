@@ -49,7 +49,11 @@ if(!isset($_SESSION['user_name'])) echo("<script>location.href='login.html';</sc
                         <div class="edit_profile_img_box">
                             <h1>Profile picture</h1>
                             <img id="profile_img" src="img/sample_proflie.png">
-                            <button type="button" id="profile_img_edit_btn"><img src="img/pen.png" onclick="location.href='profile_update.php'"> Edit</button>
+                            <div class="edit_img_box">
+                                <img src="img/pen.png" onclick="location.href='profile_update.php'">
+                                <label>Edit</label>
+                            </div>
+                            <input type="file" id="profile_img_edit_btn" style="display: none;">
                         </div>
                     </form>
                 </div>
