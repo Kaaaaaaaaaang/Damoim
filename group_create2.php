@@ -20,13 +20,6 @@ $start = $_POST['start'];
 $end = $_POST['end'];
 $intro = $_POST['intro'];
 
-if($category == "employment") $category = "취업 준비";
-else if($category == "programming") $category = "전공 과목 스터디";
-else if($category == "general_subject") $category = "인문 과목 스터디";
-
-if($how == "online") $how = "온라인";
-else if($how == "offline") $how = "오프라인";
-
 $grade_array = array($grade);
 foreach($grade_array as $value) {
   $result = implode("|", $value);
