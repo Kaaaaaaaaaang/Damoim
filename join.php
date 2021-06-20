@@ -6,13 +6,10 @@ $pw=$_POST['userPass'];
 $name=$_POST['userName'];
 $email=$_POST['userEmail'];
 $major=$_POST['userMajor'];
+$grade = $_POST['userGrade'];
 
+$sql  = "INSERT INTO user (id,pass,name,email,major,grade,img_path,intro) VALUES ('$id','$pw','$name','$email','$major','$grade','./img/sample_profile.png','나를 소개하세요.')";
 
-if($major=="soft") $major = "뉴미디어 소프트웨어과";
-else if($major=="web")$major = "뉴미디어 웹솔루션과";
-else if($major=="design")$major = "뉴미디어 디자인과";
-
-$sql  = "INSERT INTO user (id,pass,name,email,major) VALUES ('$id','$pw','$name','$email','$major')";
 $result = mysqli_query($conn, $sql);
 if($result==true){
 ?>
