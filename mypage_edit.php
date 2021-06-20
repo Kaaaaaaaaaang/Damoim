@@ -69,4 +69,3 @@ if(!isset($_SESSION['user_name'])) echo("<script>location.href='login.html';</sc
 <script type="text/javascript" src="js/mypage.js"></script> 
 </body>
 </html>
-  
