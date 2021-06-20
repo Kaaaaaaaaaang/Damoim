@@ -66,26 +66,23 @@ echo $uploadfile;
 
 $sql  = "INSERT INTO study (leader, max_mem, category, title, grade, major, how, study_day, start_time, end_time, intro, img_path) VALUES ('$leader','$people','$category','$group_name','$grade', '$major', '$how', '$day', '$start', '$end', '$intro', '$img_ad');";
 $result = mysqli_query($conn, $sql);
-?>
-<!--
+
 if($result==true){
-
-
+?>
   <script>
       alert("그룹 생성이 완료되었습니다.");
       location.href='group_lookup.html';
   </script>
 
-//<?php
-//}else{
-//?>
+<?php
+} else{
+?>
 
 <script>
     alert("땡 탈락");
     location.href='group_lookup.html';
 </script>
 
-//<?php
-//}
+<?php
+}
 ?>
--->

@@ -36,8 +36,8 @@
                             <input type="email" name="email" id="email" value="s2019s15@e-mirim.hs.kr" style="margin-bottom: 0%;">
                             <input type="button" name="emailok" value="인증하기">
                             <h1>About me</h1>
-                            <textarea id="about_me">나를 소개 해봐요.</textarea>
-                            <button type="submit" id="Update_profile_btn" onclick="location.href='mypage.html'">Update profile</button><br><br>
+                            <textarea id="about_me" name="intro">나를 소개 해봐요.</textarea>
+                            <button type="submit" id="Update_profile_btn" onclick="location.href='mypage.php'">Update profile</button><br><br>
                         </div>
                         <!-- 프로필 사진 수정 박스 -->
                         <div class="edit_profile_img_box">
@@ -52,13 +52,13 @@
      	</div>
           <div class="menu">
 			<a href="main.php"><img id="logo" src="img/logo.png"></a>
-			<a href="mypage.html"><h3 id="mypage">마이페이지</h3></a>
+			<a href="mypage.php"><h3 id="mypage">마이페이지</h3></a>
 			<h3>|</h3>
-			<a href="group_lookup.html"><h3 id="lookup">그룹조회</h3></a>
+			<a href="group_lookup.php"><h3 id="lookup">그룹조회</h3></a>
 			<h3>|</h3>
-			<a href="group_create.html"><h3 id="create">그룹생성</h3></a>
+			<a href="group_create.php"><h3 id="create">그룹생성</h3></a>
 			<h3>|</h3>
-			<a href="recommand.html"><h3 id="recommand">추천받기</h3></a>
+			<a href="recommand.php"><h3 id="recommand">추천받기</h3></a>
 		</div>
 <script type="text/javascript" src="js/mypage.js"></script> 
 </body>
