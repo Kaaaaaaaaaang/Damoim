@@ -8,7 +8,7 @@ $email=$_POST['userEmail'];
 $major=$_POST['userMajor'];
 $grade = $_POST['userGrade'];
 
-$sql  = "INSERT INTO user (id,pass,name,email,major,grade,img_path,intro) VALUES ('$id','$pw','$name','$email','$major','$grade','./img/sample_profile.png','나를 소개하세요.')";
+$sql  = "INSERT INTO user (id,pass,name,email,major,grade,img_path,intro) VALUES ('$id','$pw','$name','$email','$major','$grade','img/sample_profile.png','나를 소개하세요.')";
 
 $result = mysqli_query($conn, $sql);
 if($result==true){
@@ -21,7 +21,7 @@ if($result==true){
 }else{
 ?>
 <script>
-    alert("아이디와 비밀번호를 다시 확인해 주세요");
+    alert("아이디와 비밀번호를 다시 확인해 주세요",<? echo $result?>);
     location.href='join.html';
 </script>   
 
