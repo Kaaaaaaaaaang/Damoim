@@ -49,11 +49,23 @@ $searchSQL=$_GET['search'];
 			</form>
      		<div class="list">
 				<?php
-					if(isset($searchSQL)) $sql = $searchSQL;
-					else $sql = "select * from study";
+					if(isset($searchSQL)) {
+						$sql = "select * from study ".$searchSQL;
+						$sql1 = "select COUNT(*) FROM study ".$searchSQL;
+               			$cnt=mysqli_query($conn, $sql1);
+					}
 					
+					else {
+						$sql = "select * from study";
+						$sql1 = "select COUNT(*) FROM study";
+               			$cnt=mysqli_query($conn, $sql1);
+					}
 					$result=mysqli_query($conn, $sql);
-						
+					if($cnt==0){
+						?>
+						<h2>조회 결과가 없습니다. 그룹을 생성해 보세요! </h2>
+						<?php
+					}else{
 					while($row = mysqli_fetch_array($result)){
 				?>
      			<div class="list_box">
@@ -68,6 +80,7 @@ $searchSQL=$_GET['search'];
 	        		</figure>
      			</div>
 				 <?php
+						}
 					}
 				 ?>
 			</div>	
