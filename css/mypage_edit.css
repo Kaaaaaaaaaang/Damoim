@@ -163,6 +163,7 @@ body {
   height: 100%;
   float: right;
   margin-right: 3%;
+  position: relative;
 }
 
 .container .container2 .edit_profile_box .edit_profile_img_box h1 {
@@ -174,13 +175,14 @@ body {
 .container .container2 .edit_profile_box .edit_profile_img_box #profile_img {
   width: 100%;
   border-radius: 70%;
+  position: absolute;
 }
 
 .container .container2 .edit_profile_box .edit_profile_img_box .edit_img_box {
   width: 40%;
   height: 25px;
   margin-left: 30%;
-  margin-top: 5%;
+  margin-top: 110%;
   background-color: white;
   outline: none;
   border: solid 1px black;
@@ -194,6 +196,14 @@ body {
   width: 18%;
   vertical-align: middle;
   margin-left: 25%;
+}
+
+#profile_img_edit_btn {
+  margin-top: 105%;
+  position: absolute;
+  margin-left: 30%;
+  width: 40%;
+  display: none;
 }
 
 select:focus { outline: none; }
