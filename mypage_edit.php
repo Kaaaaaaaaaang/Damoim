@@ -38,12 +38,7 @@ if(!isset($_SESSION['user_name'])) echo("<script>location.href='login.html';</sc
                             <h1>Name</h1>
                             <input type="text" name="name" id="name" value="<?php echo $row['name']?>">
                             <h1>Department</h1>
-                            <select name="major" style="background-color: #00000000;">
-                                <option value="none" style="color: #000000;">학과</option>
-                                <option value="soft" style="color: #000000;">뉴미디어소프트웨어과</option>
-                                <option value="web" style="color: #000000;">뉴미디어웹솔루션과</option>
-                                <option value="design" style="color: #000000;">뉴미디어디자인과</option>
-                            </select><br>
+                            <h4 id="major">학과</h4>
                             <h1>Email</h1>
                             <input type="email" name="email" id="email" style="margin-bottom: 4%;" value="<?php echo $row['email']?>">
                             <h1>About me</h1>

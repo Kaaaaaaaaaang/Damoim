@@ -104,7 +104,7 @@ body {
   font-weight: 300;
 }
 
-.container .container2 .edit_profile_box .edit_profile_info_box input, select, #about_me  {
+.container .container2 .edit_profile_box .edit_profile_info_box input, #major, #about_me  {
   width: 90%;
   padding-left: 2%;
   padding-right: 2%;
