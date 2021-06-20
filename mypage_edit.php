@@ -33,8 +33,7 @@
                                 <option value="design" style="color: #000000;">뉴미디어디자인과</option>
                             </select><br>
                             <h1>Email</h1>
-                            <input type="email" name="email" id="email" value="s2019s15@e-mirim.hs.kr" style="margin-bottom: 0%;">
-                            <input type="button" name="emailok" value="인증하기">
+                            <input type="email" name="email" id="email" value="s2019s15@e-mirim.hs.kr" style="margin-bottom: 4%;">
                             <h1>About me</h1>
                             <textarea id="about_me" name="intro">나를 소개 해봐요.</textarea>
                             <button type="submit" id="Update_profile_btn" onclick="location.href='mypage.php'">Update profile</button><br><br>
