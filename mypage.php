@@ -40,7 +40,7 @@ if(!isset($_SESSION['user_name'])) echo("<script>location.href='login.html';</sc
                $sql = "select * FROM study where member like '%".$_SESSION['user_id']."%'";
                $result=mysqli_query($conn, $sql);
                $row=mysqli_fetch_array($result);
-               if($cnt == 0){
+               if($cnt1 == 0){
                     ?>
                     <h1 id="not_moim">참여하는 모임이 없습니다.</h1>
                     <?php

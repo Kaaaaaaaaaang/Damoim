@@ -2,6 +2,7 @@
 session_start();
 include "db.php";
 if(!isset($_SESSION['user_name'])) echo("<script>location.href='login.html';</script>"); 
+$searchSQL=$_GET['search'];
 ?>
 <!DOCTYPE html>
 <html>
@@ -21,25 +22,25 @@ if(!isset($_SESSION['user_name'])) echo("<script>location.href='login.html';</sc
 					<div class="layout_box">
 						<span>학과</span>
 						<div class="layout" > 
-							<label><input type="checkbox" name="major" value="뉴미디어소프트웨어과"> 소프트웨어과</label>
-							<label><input type="checkbox" name="major" value="뉴미디어웹솔루션과"> 웹솔루션과</label>
-							<label><input type="checkbox" name="major" value="뉴미디어디자인과"> 디자인과</label>
+							<label><input required type="radio" name="major" value="뉴미디어소프트웨어과"> 소프트웨어과</label>
+							<label><input required type="radio" name="major" value="뉴미디어웹솔루션과"> 웹솔루션과</label>
+							<label><input required type="radio" name="major" value="뉴미디어디자인과"> 디자인과</label>
 						</div>
 					</div>
 				<div class="layout_box">
 					<span>학년</span>
 					<div class="layout">
-						<label><input type="checkbox" name="age" value="1학년"> 1학년</label>
-						<label><input type="checkbox" name="age" value="2학년"> 2학년</label>
-						<label><input type="checkbox" name="age" value="3학년"> 3학년</label>
+						<label><input required type="radio" name="age" value="1학년"> 1학년</label>
+						<label><input required type="radio" name="age" value="2학년"> 2학년</label>
+						<label><input required type="radio" name="age" value="3학년"> 3학년</label>
 					</div>
 				</div>
 				<div class="layout_box">
 					<span>카테고리</span>
 					<div class="layout">
-						<label><input type="checkbox" name="category" value="취업 준비"> 취업 준비</label>
-						<label><input type="checkbox" name="category" value="전공과목 스터디"> 전공과목 스터디</label>
-						<label><input type="checkbox" name="category" value="인문과목 스터디"> 인문과목 스터디</label>
+						<label><input required type="radio" name="category" value="취업 준비"> 취업 준비</label>
+						<label><input required type="radio" name="category" value="전공과목 스터디"> 전공과목 스터디</label>
+						<label><input required type="radio" name="category" value="인문과목 스터디"> 인문과목 스터디</label>
 					</div>
 				</div>
 				<div class="layout_box">
@@ -48,7 +49,9 @@ if(!isset($_SESSION['user_name'])) echo("<script>location.href='login.html';</sc
 			</form>
      		<div class="list">
 				<?php
-					$sql = "select * from study";
+					if(isset($searchSQL)) $sql = $searchSQL;
+					else $sql = "select * from study";
+					
 					$result=mysqli_query($conn, $sql);
 						
 					while($row = mysqli_fetch_array($result)){
