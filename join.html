@@ -54,7 +54,8 @@
 			<form method="POST" action="join.php">
 
 				<input required type="text" name="userName" id="userName" placeholder="이름" style="color: #FFFFFF;"><br>
-				<input required type="text" name="userID" id="userID" placeholder="아이디" style="color: #FFFFFF;"><br>
+				<input required type="text" name="userID" id="userID" placeholder="아이디" style="color: #FFFFFF; width: 25%;">
+				<input required type="button" name="idok" value="중복확인" onclick="checkid();"><br>
 				<input required type="password" name="userPass" id="userPass" placeholder="비밀번호" style="color: #FFFFFF;"><br>
 				<input required type="password" name="pwok" id="pwok" placeholder="비밀번호 확인" style="color: #FFFFFF;"><br>
 				<input required type="email" name="userEmail" id="userEmail" placeholder="email" style="color: #FFFFFF;">
@@ -64,7 +65,23 @@
 					<option value="soft" style="color: #000000;">뉴미디어소프트웨어과</option>
 					<option value="web" style="color: #000000;">뉴미디어웹솔루션과</option>
 					<option value="design" style="color: #000000;">뉴미디어디자인과</option>
-				</select><br>
+				</select>
+
+				<div class="radio-wrap">
+					<input type="radio" name="answer" id="grade" value="1학년"/>
+					<label for="1학년">1학년</label>
+				  </div>
+				  <div class="radio-wrap">
+					<input type="radio" name="answer" id="grade" value="2학년"/>
+					<label for="2학년">2학년</label>
+				  </div>
+				  <div class="radio-wrap">
+					<input type="radio" name="answer" id="grade" value="3학년"/>
+					<label for="3학년">3학년</label>
+				  </div>
+				
+				<br>
+
 				<button id="join_btn" type="submit">JOIN</button><br><br>
 			</form>
      	</div>

@@ -51,7 +51,7 @@ video { width: 100%; }
 	top:0; left:0;
 }
 
-.container2 input { 
+.container2 input[type=text], input[type=email] { 
 	font-size: 20px; 
 	background-color:#00000000; 
 	font-family: 'Noto Sans KR', sans-serif; 
@@ -62,6 +62,22 @@ video { width: 100%; }
 	width: 30%; 
 	height: 7%; 
 	border:0;
+	border-bottom:solid 1px #FFFFFF;
+}
+
+.container2 input[type=password] { 
+	font-size: 20px; 
+	background-color:#00000000; 
+	font-family: 'Noto Sans KR', sans-serif; 
+	font-weight: 500; 
+	margin-top: 2%; 
+	padding-left: 1%;
+    padding-bottom:1%;
+	width: 30%;
+	width: 30%; 
+	height: 7%; 
+	color: black; 
+	border:0; 
 	border-bottom:solid 1px #FFFFFF;
 }
 
@@ -110,9 +126,44 @@ input::-moz-placeholder { color: #F2F2F2; }
 	font-family: 'Noto Sans KR', sans-serif; 
 	font-weight: 500; 
 	margin-top: 3%;
-	width: 32%;
-	height: 63px;
+	width: 32%; 
+	height: 64px; 
 	background-color: #FF002E; 
 	border-radius:30px;  
 	border: none; 
+}
+
+.container2 .radio-wrap {
+	float: left; 
+	font-size: 2em; 
+	color: #000000; 
+	font-family: 'Noto Sans KR', sans-serif; 
+	font-weight: 300; 
+	width: auto;
+	line-height: 200%;
+}
+
+.container2 .radio-wrap label { margin-left: 5%; }
+
+input[type='radio'] {
+	-webkit-appearance:none;
+	width:20px;
+  	height:20px;
+  	border:1px solid darkgray;
+  	border-radius:50%;
+  	outline:none;
+  	background:#e6e6e6;
+}
+
+input[type='radio']:before {
+  	content:'';
+  	display:block;
+  	width:60%;
+  	height:60%;
+  	margin: 20% auto;  
+  	border-radius:50%;  
+}
+
+input[type='radio']:checked:before {
+ 	background:#FF002E;
 }
