@@ -14,7 +14,7 @@ if(!isset($_SESSION['user_name'])) echo("<script>location.href='login.html';</sc
 </head>
 <body style="overflow-x:hidden;">
      	<div class="container2" style="float: left;">
-     		<div class="box" style="background: #BDBDBD;"><img id="profile_img" src="img/sample_proflie.png"></div>
+     		<div class="box" style="background: #BDBDBD;"><img id="profile_img" src="<?php echo $row['img_path']?>"></div>
                <?php
                     $sql = "SELECT * FROM user WHERE id ='".$_SESSION['user_id']."'";
                     $result=mysqli_query($conn, $sql)or die(mysqli_error($conn));
