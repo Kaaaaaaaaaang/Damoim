@@ -33,12 +33,12 @@ if(!isset($_SESSION['user_name'])) echo("<script>location.href='login.html';</sc
                     <h1>Public profile</h1>
                     <hr>
                     <!-- 프로필 (이름, 과, 이메일, 소개 수정 등) 정보 수정 박스 -->
-                    <form>
+                    <form method="post" action="profile_update.php" enctype="multipart/form-data">
                         <div class="edit_profile_info_box">
                             <h1>Name</h1>
                             <input type="text" name="name" id="name" value="<?php echo $row['name']?>">
                             <h1>Department</h1>
-                            <h4 id="major" value="<?php echo $row['major']?>"></h4>
+                            <h4 id="major"><?php echo $row['major']?></h4>
                             <h1>Email</h1>
                             <input type="email" name="email" id="email" style="margin-bottom: 4%;" value="<?php echo $row['email']?>">
                             <h1>About me</h1>
@@ -49,7 +49,7 @@ if(!isset($_SESSION['user_name'])) echo("<script>location.href='login.html';</sc
                         <div class="edit_profile_img_box">
                             <h1>Profile picture</h1>
                             <img id="profile_img" src="img/sample_proflie.png">
-                            <button type="button" id="profile_img_edit_btn"><img src="img/pen.png" alt=""> Edit</button>
+                            <button type="button" id="profile_img_edit_btn"><img src="img/pen.png" onclick="location.href='profile_update.php'"> Edit</button>
                         </div>
                     </form>
                 </div>
