@@ -16,7 +16,7 @@ if($result==true){
 ?>
   <script>
       alert("프로필 수정이 완료되었습니다.");
-      location.href='my_page.php';
+      location.href='mypage.php';
   </script>
 
 <?php
@@ -25,7 +25,7 @@ if($result==true){
 
 <script>
     alert("프로필 수정에 실패했습니다.");
-    location.href='my_page.php';
+    location.href='mypage.php';
 </script>
 
 <?php
