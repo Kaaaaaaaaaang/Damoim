@@ -23,7 +23,7 @@ if(!isset($_SESSION['user_name'])) echo("<script>location.href='login.html';</sc
             <div class="container2">
                 <!-- 현재 프로필 -->
                 <div class="now_profile">
-                    <img id="profile_img" src="img/sample_proflie.png">
+                    <img id="profile_img" src="<?php echo $row['img_path']?>">
                     <h3 id="mypage_name"><?php echo $row['name']?></h3>
      		        <h3 id="mypage_hakgwa"><?php echo $row['major']?></h3>
                 </div>
