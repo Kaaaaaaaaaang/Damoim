@@ -29,7 +29,7 @@ if(!isset($_SESSION['user_name'])) echo("<script>location.href='login.html';</sc
                </div>
      		<a href="mypage_edit.php"><span>수정</span></a>
      		<span>|</span>
-     		<span>탈퇴</span>
+     		<span onclick="location.href='profile_delete.php'">탈퇴</span>
      	</div>
      	<div class="group_list" style="float: left;">
                <?php
