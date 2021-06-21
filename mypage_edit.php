@@ -67,22 +67,11 @@ if(!isset($_SESSION['user_name'])) echo("<script>location.href='login.html';</sc
 			<h3>|</h3>
 			<a href="recommand.php"><h3 id="recommand">추천받기</h3></a>
 		</div>
-        <script>
-            $(function () {
-
-            $('#edit_img_box').click(function (e) {
-
-            e.preventDefault();
-            
-            $('#profile_img_edit_btn').click();
-
-            });
-
-            });
-            function changeValue(obj){
-            alert(obj.value);
-
-            }
+<script type="text/javascript" src="js/mypage.js"></script> 
+<script LANGUAGE="javascript">
+    $(".edit_img_box").click( () => {
+        $("#profile_img_edit_btn").click();
+    })
 </script>
 </body>
 </html>
