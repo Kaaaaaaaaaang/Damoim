@@ -87,16 +87,16 @@ $searchSQL=$_GET['search'];
      	</div>
      	<!--하단 빈공간-->
 		<div class="footer"></div>
-			<div class="menu">
-				<a href="main.php"><img id="logo" src="img/logo.png"></a>
-				<a href="mypage.php"><h3 id="mypage">마이페이지</h3></a>
-				<h3>|</h3>
-				<a href="group_lookup.php"><h3 id="lookup">그룹조회</h3></a>
-				<h3>|</h3>
-				<a href="group_create.php"><h3 id="create">그룹생성</h3></a>
-				<h3>|</h3>
-				<a href="recommand.php"><h3 id="recommand">추천받기</h3></a>
-			</div>
+		</div>
+		<div class="menu">
+			<a href="main.php"><img id="logo" src="img/logo.png"></a>
+			<a href="mypage.php"><h3 id="mypage">마이페이지</h3></a>
+			<h3>|</h3>
+			<a href="group_lookup.php"><h3 id="lookup">그룹조회</h3></a>
+			<h3>|</h3>
+			<a href="group_create.php"><h3 id="create">그룹생성</h3></a>
+			<h3>|</h3>
+			<a href="recommand.php"><h3 id="recommand">추천받기</h3></a>
 		</div>
 	</div>
 
