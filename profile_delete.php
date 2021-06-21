@@ -13,7 +13,9 @@ if($result==true) {
 ?>
   <script>
       alert("회원 탈퇴가 완료되었습니다.");
+      <?session_destroy();?>
       location.href='main.php';
+      
   </script>
 
 <?php
