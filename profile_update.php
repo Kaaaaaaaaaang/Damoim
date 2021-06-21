@@ -8,7 +8,7 @@ $name = $_POST['name'];
 $email = $_POST['email'];
 $intro = $_POST['intro'];
 
-$uploaddir = 'profile/';
+$uploaddir = '../profile/';
 echo $_FILES['img_path']['name']."<br>";
 echo $_FILES['img_path']['type']."<br>";
 echo $_FILES['img_path']['size']."<br>";
