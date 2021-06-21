@@ -13,7 +13,7 @@
 	<div class="container">
     <div class="container2">
    		<form>
-		  <select name="people" style="color: #000000; background-color: #00000000; float: left; margin-left: 3%;">
+		  <select name="people" style="color: #000000; background-color: #00000000; float: left; margin-left: 4.5%;">
 		    <option value="none" style="color: #000000;">모임 최대 인원수</option>
 		    <option value="1명" style="color: #000000;">1명</option>
 		    <option value="2명" style="color: #000000;">2명</option>
@@ -27,8 +27,8 @@
 		    <option value="10명" style="color: #000000;">10명</option>
 		  </select>
 		  <h3 id="category" style="color: #000000; background-color: #00000000; margin-left: 5%; float: left;">전공과목 스터디</h3>
-			<div class="layout_group_title_box">
-				<input type="text" name="group_name" id="group_name" placeholder="모임명" style="color: #000000;">
+			<div class="layout_group_title_box"  style="text-align: left;">
+			<h4 id="group_name" style="color: #000000; margin-left: 5%; float: left; margin-bottom: 5%;">모임명</h4>
 				</div>
 			<div class="layout_box">
 					<span>가입 가능 학년</span>
