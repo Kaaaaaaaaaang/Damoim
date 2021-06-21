@@ -49,11 +49,8 @@ if(!isset($_SESSION['user_name'])) echo("<script>location.href='login.html';</sc
                         <div class="edit_profile_img_box">
                             <h1>Profile picture</h1>
                             <img id="img_path" src="<?php echo $row['img_path']?>">
-                            <input type="file" id="profile_img_edit_btn" name="img_path">
-                            <div class="edit_img_box">
-                                <img src="img/pen.png">
-                                <label>Edit</label>
-                            </div>
+                            <input type="file" id="profile_img_edit_btn" name="img_path" onchange="changeValue(this)">
+                            <button type="button" id="edit_img_box"><img src="img/pen.png">Edit</button>
                         </div>
                     </form>
                 </div>
@@ -70,6 +67,22 @@ if(!isset($_SESSION['user_name'])) echo("<script>location.href='login.html';</sc
 			<h3>|</h3>
 			<a href="recommand.php"><h3 id="recommand">추천받기</h3></a>
 		</div>
-<script type="text/javascript" src="js/mypage.js"></script> 
+        <script>
+            $(function () {
+
+            $('#edit_img_box').click(function (e) {
+
+            e.preventDefault();
+            
+            $('#profile_img_edit_btn').click();
+
+            });
+
+            });
+            function changeValue(obj){
+            alert(obj.value);
+
+            }
+</script>
 </body>
 </html>
