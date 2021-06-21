@@ -20,10 +20,10 @@ if(!isset($_SESSION['user_name'])) echo("<script>location.href='login.html';</sc
                     $result=mysqli_query($conn, $sql)or die(mysqli_error($conn));
                     $row=mysqli_fetch_array($result);
                ?>
-     		<h3 id="mypage_name"><?php echo $row['name']?></h3>
+     		<h3 id="mypage_name"><?php echo $row['name'];?></h3>
      		<h3 id="mypage_school">미림여자정보과학고등학교</h3>
-     		<h3 id="mypage_hakgwa"><?php echo $row['major']?></h3>
-     		<h3 id="mypage_email"><?php echo $row['email']?></h3><br>
+     		<h3 id="mypage_hakgwa"><?php echo $row['major'];?></h3>
+     		<h3 id="mypage_email"><?php echo $row['email'];?></h3><br>
                <div class="mypage_about_box">
                     <p id="mypage_about"><?php echo $row['intro']?></p>
                </div>
@@ -48,7 +48,7 @@ if(!isset($_SESSION['user_name'])) echo("<script>location.href='login.html';</sc
                     while($row = mysqli_fetch_array($result)){
                ?>
                     <figure class="group_about_box">
-          		<img id="group_img" src="<? echo $row['img_path'][$i]; ?>">
+          		<img id="group_img" src="<?php echo $row['img_path'][$i]; ?>">
                     <figcaption>
                          <br>
                         <h3 id="group_title"><?php echo $row['title'][$i];?></h3><br>

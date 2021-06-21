@@ -31,7 +31,7 @@ $row2=mysqli_fetch_array($result2);
         <h2>스터디 소개</h2>
         <div class="ab">
           <p id="group_about">
-            <?echo $row['intro'];?>
+            <?php echo $row['intro'];?>
           </p>
         </div>
       </div>
