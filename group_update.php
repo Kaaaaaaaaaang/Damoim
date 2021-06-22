@@ -10,7 +10,6 @@ session_start();
 
 $leader = $_SESSION['user_id'];
 $people = $_POST['people'];
-$group_name = $_POST['group_name'];
 $grade = $_POST['grade'];
 $major = $_POST['major'];
 $how = $_POST['how'];
@@ -37,10 +36,10 @@ foreach($day_array as $value) {
 }
 $day = $result;
 
+$title=$_GET['title'];
 $sql = "SELECT * FROM study WHERE title ='".$title."'";
 $result=mysqli_query($conn, $sql)or die(mysqli_error($conn));
 $row=mysqli_fetch_array($result);
-
 
 if($_FILES['study_img']['name']==null) {
 
@@ -69,7 +68,8 @@ if($_FILES['study_img']['name']==null) {
 
 }
 
-$sql  = "UPDATE study SET max_mem='$people', grade='$grade', major='$major', how='$how', study_day='$day', start_time='$start', end_time='$end', img_path='$img_ad', intro='$intro' WHERE title='$group_name' and leader='$leader';";
+$sql  = "UPDATE study SET max_mem='$people', grade='$grade', major='$major', how='$how', study_day='$day', start_time='$start', end_time='$end', img_path='$img_ad', intro='$intro' WHERE title='$title';";
+
 $result = mysqli_query($conn, $sql);
 
 if($result==true){
