@@ -23,22 +23,19 @@ $row=mysqli_fetch_array($result);
 <body>
 	<div class="container">
     <div class="container2">
-   		<form>
+   		<form method="post" action="group_update.php"  enctype="multipart/form-data">
 		  <select name="people" style="color: #000000; background-color: #00000000; float: left; margin-left: 4.5%;">
-				<?php
-					$status = $row['max_mem'];
-				?>
 		    <option value="none" style="color: #000000;">모임 최대 인원수</option>
-				<option value="1명" <?php if($status == "1명") echo "SELECTED";?> style="color: #000000;">1명</option>
-				<option value="2명"  <?php if($status == "2명") echo "SELECTED";?> style="color: #000000;">2명</option>
-		    <option value="3명"  <?php if($status == "3명") echo "SELECTED";?> style="color: #000000;">3명</option>
-		    <option value="4명"  <?php if($status == "4명") echo "SELECTED";?> style="color: #000000;">4명</option>
-		    <option value="5명"  <?php if($status == "5명") echo "SELECTED";?> style="color: #000000;">5명</option>
-		    <option value="6명"  <?php if($status == "6명") echo "SELECTED";?> style="color: #000000;">6명</option>
-		    <option value="7명"  <?php if($status == "7명") echo "SELECTED";?> style="color: #000000;">7명</option>
-		    <option value="8명"  <?php if($status == "8명") echo "SELECTED";?> style="color: #000000;">8명</option>
-		    <option value="9명"  <?php if($status == "9명") echo "SELECTED";?> style="color: #000000;">9명</option>
-		    <option value="10명"  <?php if($status == "10명") echo "SELECTED";?> style="color: #000000;">10명</option>
+				<option value="1명" style="color: #000000;">1명</option>
+				<option value="2명" style="color: #000000;">2명</option>
+		    <option value="3명" style="color: #000000;">3명</option>
+		    <option value="4명" style="color: #000000;">4명</option>
+		    <option value="5명" style="color: #000000;">5명</option>
+		    <option value="6명" style="color: #000000;">6명</option>
+		    <option value="7명" style="color: #000000;">7명</option>
+		    <option value="8명" style="color: #000000;">8명</option>
+		    <option value="9명" style="color: #000000;">9명</option>
+		    <option value="10명" style="color: #000000;">10명</option>
 		  </select>
 		  <h3 id="category" style="color: #000000; background-color: #00000000; margin-left: 5%; float: left;"><?php echo $row['category'];?></h3>
 			<div class="layout_group_title_box"  style="text-align: left;">
@@ -98,7 +95,7 @@ $row=mysqli_fetch_array($result);
 				</div>
      		<button id="group_create_btn" onclick="location.href='group_update.php'" type="submit" >모임 수정하기</button>
     		<button id="group_delete_btn" onclick="location.href='group_delete.php'" style="margin-bottom: 30%;">모임 삭제하기</button>
-    		</form>
+    	</form>
 		</div>
 		<div class="menu">
 			<a href="main.php"><img id="logo" src="img/logo.png"></a>
