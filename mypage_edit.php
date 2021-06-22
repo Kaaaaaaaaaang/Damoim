@@ -10,7 +10,7 @@ if(!isset($_SESSION['user_name'])) echo("<script>location.href='login.html';</sc
 	<meta charset="utf-8">
 	<title>다모임</title>
     <link rel='icon' type='images/png'href='img/logo.png'>
-	<link href="css/mypage_edit.css" rel="stylesheet" type="text/css" />
+	<link href="css/mypage_edit_new.css" rel="stylesheet" type="text/css" />
     <link href="css/common.css" rel="stylesheet" type="text/css" />
     <script>
        var imgTarget = $('.preview-image .upload-hidden'); imgTarget.on('change', function(){ var parent = $(this).parent(); parent.children('.upload-display').remove(); if(window.FileReader){ //image 파일만 
