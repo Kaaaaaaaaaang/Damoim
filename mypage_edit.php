@@ -52,16 +52,10 @@ if(!isset($_SESSION['user_name'])) echo("<script>location.href='login.html';</sc
                             <textarea id="about_me" name="intro"><?php echo $row['intro']?></textarea>
                             <button type="submit" id="Update_profile_btn" onclick="location.href='profile_update.php'">Update profile</button><br><br>
                         </div>
-                        <div class="filebox preview-image"> 
-                        <input class="upload-name" value="파일선택" disabled="disabled" > 
-                        <label for="input-file">업로드</label> 
-                        <input type="file" id="input-file" class="upload-hidden"> 
+                        <div class="filebox">
+                            <label for="ex_file">profile upload</label>
+                            <input type="file" id="ex_file">
                         </div>
-
-
-
-
-
                     </form>
                 </div>
             </div>
