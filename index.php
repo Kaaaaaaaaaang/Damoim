@@ -1,1 +1,1 @@
-echo("<script>location.href='main.html';</script>"); 
+echo("<script>location.href='main.php';</script>"); 
