@@ -35,7 +35,6 @@ $row2=mysqli_fetch_array($result2);
           </p>
         </div>
       </div>
-      <hr style="margin-top: 45%;">
       <div class="head_about_box">
         <div class="box">
           <h2>모임장 소개</h2><br>
@@ -50,21 +49,28 @@ $row2=mysqli_fetch_array($result2);
           </p>
         </div>
       </div>
-      <hr style="margin-top: 45%;">
       <div class="information_box">
-      <h2>상세한 정보</h2>
-      <div class="ab">
-      <span>학년</span> <span id="age"><?php echo $row['grade'];?></span> | 
-      <span>인원</span> <span id="people"><?php echo $row['max_mem'];?></span><span>명</span><br>
-      <span>날짜</span> <span id="day">주말</span> |
-      <span>시간</span> <span id="time"><?php echo $row['start_time'];?>시 - <?php echo $row['end_time'];?>시</span>
+        <h2>상세한 정보</h2>
+        <div class="ab">
+          <span>학년</span> <span id="age"><?php echo $row['grade'];?></span> | 
+          <span>인원</span> <span id="people"><?php echo $row['max_mem'];?></span><span>명</span><br>
+          <span>날짜</span> <span id="day"></span> |
+          <span>시간</span> <span id="time"><?php echo $row['start_time'];?>시 - <?php echo $row['end_time'];?>시</span>
+        </div>
       </div>
+      <div class="member_box">
+        <h2>모임원 리스트</h2><br><br>
+        <div class="member_list">
+          <img id="member_profile_img" src="img/sample_proflie.png"><br>
+          <span id="member_name"><?php echo $row2['name'];?></span><br>
+          <span id="member_hakgwa"><?php echo $row2['major'];?></span><br>
+          <span id="member_age"><?php echo $row2['grade'];?></span>
+        </div>
       </div>
       <?php
         if($row['leader']==$_SESSION['user_id']){
           ?>
           <button id="group_apply_btn" onclick="location.href='login.html'">모임 수정 / 삭제하기</button><br><br>
-          <button id="group_apply_btn" onclick="location.href='login.html'">멤버확인하기</button><br><br>
           <?
         }else if(in_array($_SESSION['user_id'],$row['member'])){
           ?>
