@@ -21,15 +21,25 @@ if(!isset($_SESSION['user_name'])) echo("<script>location.href='login.html';</sc
                     $row=mysqli_fetch_array($result);
                ?>
      		<h3 id="mypage_name"><?php echo $row['name'];?></h3>
-     		<h3 id="mypage_school">미림여자정보과학고등학교</h3>
-     		<h3 id="mypage_hakgwa"><?php echo $row['major'];?></h3>
-     		<h3 id="mypage_email"><?php echo $row['email'];?></h3><br>
-               <div class="mypage_about_box">
-                    <p id="mypage_about"><?php echo $row['intro']?></p>
+               <div class="layout">
+                    <img src="img/building.png" style="width: 10%; float: left; margin-right: 4%;">
+                    <h3 id="mypage_school">미림여자정보과학고등학교</h3>
                </div>
-     		<a href="mypage_edit.php"><span>수정</span></a>
-     		<span>|</span>
-     		<span onclick="location.href='profile_delete.php'">탈퇴</span>
+               <div class="layout">
+                    <img src="img/major.png" style="width: 10%; float: left; margin-right: 4%;">
+     		     <h3 id="mypage_hakgwa"><?php echo $row['major'];?></h3>
+               </div>
+               <div class="layout" style="margin-bottom: 10%;">
+                    <img src="img/email.png" style="width: 10%; float: left; margin-right: 4%;">
+                    <h3 id="mypage_email"><?php echo $row['email'];?></h3><br>
+               </div>
+               <div class="mypage_about_box">
+                    <img src="img/quote02.png" style="width: 5%; float: left; margin-right: 4%;">
+                    <p id="mypage_about"><?php echo $row['intro']?></p>
+                    <img src="img/quote01.png" style="width: 5%; float: right; margin-left: 4%;">
+               </div>
+     		<a href="mypage_edit.php" style="text-decoration: none;"><div class="edit" style="margin-top: 10%;">수정</div></a>
+     		<div class="delete" onclick="location.href='profile_delete.php'">탈퇴</div>
      	</div>
      	<div class="group_list" style="float: left;">
                <?php
@@ -42,7 +52,7 @@ if(!isset($_SESSION['user_name'])) echo("<script>location.href='login.html';</sc
                $result=mysqli_query($conn, $sql);
                if($cnt == 0){
                     ?>
-                    <h1 id="not_moim">참여하는 모임이 없습니다.</h1>
+                    <img id="not_moim" src="img/not_moim.png">
                     <?php
                }else{
                     while($row = mysqli_fetch_array($result)){
@@ -52,7 +62,7 @@ if(!isset($_SESSION['user_name'])) echo("<script>location.href='login.html';</sc
                     <figcaption>
                          <br>
                         <h3 id="group_title"><?php echo $row['title'][$i];?></h3><br>
-                        <p id="gro up_about"><?php echo $row['intro'][$i];?></p>
+                        <p id="group_about"><?php echo $row['intro'][$i];?></p>
                     </figcaption>
                     <a href="my_group.html"></a>
                </figure>
