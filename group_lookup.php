@@ -50,14 +50,17 @@ $searchSQL=$_GET['search'];
      		<div class="list">
 				<?php
 					if(isset($searchSQL)) {
-						$sql = "select COUNT(*) FROM study ".$searchSQL;
+						$sql = "select * from study ".$searchSQL;
+						$sql1 = "select COUNT(*) FROM study ".$searchSQL;
 
 					}
-					
+						
 					else {
-						$sql = "select COUNT(*) FROM study";
+						$sql = "select * from study";
+						$sql1 = "select COUNT(*) FROM study";
 					}
 
+					$cnt=mysqli_query($conn, $sql1);
 					$result=mysqli_query($conn, $sql);
 					if($result==0){
 						?>
@@ -97,6 +100,7 @@ $searchSQL=$_GET['search'];
 			<a href="recommand.php"><h3 id="recommand">추천받기</h3></a>
 		</div>
 	</div>
+
 
 </body>
 </html>
