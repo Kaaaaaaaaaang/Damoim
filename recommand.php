@@ -86,7 +86,7 @@ $row = mysqli_fetch_array($result);
         <h3>|</h3>
         <a href="group_create.php"><h3 id="create">그룹생성</h3></a>
         <h3>|</h3>
-        <a href="recommand.php"><h3 id="recommand">추천받기</h3></a>
+        <a href="stop.html"><h3 id="recommand">추천받기</h3></a>
       </div>
 	</div>
 </body>
