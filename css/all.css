@@ -26,6 +26,7 @@ body {
   color: #FF002E;
   font-weight: 500;
   margin-left: 5%;
+  float: left;
 }
 
 .menu h3 { 
