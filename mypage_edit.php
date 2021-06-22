@@ -54,7 +54,7 @@ if(!isset($_SESSION['user_name'])) echo("<script>location.href='login.html';</sc
                         </div>
                         <div class="filebox">
                             <label for="ex_file">profile upload</label>
-                            <input type="file" id="ex_file">
+                            <input type="file" id="ex_file" name="img_path">
                         </div>
                     </form>
                 </div>

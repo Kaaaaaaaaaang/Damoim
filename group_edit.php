@@ -2,9 +2,9 @@
 session_start();
 include "db.php";
 if(!isset($_SESSION['user_name'])) echo("<script>location.href='login.html';</script>"); 
-$group_title=$_GET['title'];
+$title=$_GET['title'];
 
-$sql = "SELECT * FROM study WHERE title ='".$group_title."'";
+$sql = "SELECT * FROM study WHERE title ='".$title."'";
 $result=mysqli_query($conn, $sql)or die(mysqli_error($conn));
 $row=mysqli_fetch_array($result);
 ?>
@@ -23,16 +23,11 @@ $row=mysqli_fetch_array($result);
 <body>
 	<div class="container">
     <div class="container2">
-			<?php
-        $sql = "SELECT * FROM study WHERE title ='".$_SESSION['user_id']."'";
-        $result=mysqli_query($conn, $sql)or die(mysqli_error($conn));
-        $row=mysqli_fetch_array($result);
-      ?>
-   		<form>
+   		<form method="post" action="group_update.php"  enctype="multipart/form-data">
 		  <select name="people" style="color: #000000; background-color: #00000000; float: left; margin-left: 4.5%;">
 		    <option value="none" style="color: #000000;">모임 최대 인원수</option>
-		    <option value="1명" style="color: #000000;">1명</option>
-		    <option value="2명" style="color: #000000;">2명</option>
+				<option value="1명" style="color: #000000;">1명</option>
+				<option value="2명" style="color: #000000;">2명</option>
 		    <option value="3명" style="color: #000000;">3명</option>
 		    <option value="4명" style="color: #000000;">4명</option>
 		    <option value="5명" style="color: #000000;">5명</option>
@@ -100,7 +95,7 @@ $row=mysqli_fetch_array($result);
 				</div>
      		<button id="group_create_btn" onclick="location.href='group_update.php'" type="submit" >모임 수정하기</button>
     		<button id="group_delete_btn" onclick="location.href='group_delete.php'" style="margin-bottom: 30%;">모임 삭제하기</button>
-    		</form>
+    	</form>
 		</div>
 		<div class="menu">
 			<a href="main.php"><img id="logo" src="img/logo.png"></a>
