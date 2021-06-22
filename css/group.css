@@ -42,7 +42,10 @@
 	text-align: center;
 	margin-top: 40%;
 }
-
+.container {
+	width: 100%;
+	background-image: url('img/back-001.png');
+}
 .container2 #hashtag { 
 	font-size: 1.2em; 
 	color: #FF002E; 

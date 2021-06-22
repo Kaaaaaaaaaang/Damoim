@@ -18,11 +18,13 @@ $row2=mysqli_fetch_array($result2);
   <meta charset="utf-8">
 	<title>다모임</title>
   <link rel='icon' type='images/png'href='img/logo.png'>
-	<link href="css/group_new.css" rel="stylesheet" type="text/css" />
-  <link href="css/common.css" rel="stylesheet" type="text/css" />
+	<link href="css/new_group.css" rel="stylesheet" type="text/css" />
+  <link href="css/all.css" rel="stylesheet" type="text/css" />
 </head>
 <body style="overflow-x:hidden;">
 <div class="container">
+  <img src="img/backbackback.png"><br>
+  <img src="img/backback.png" style="vertical-align:text-bottom">
   <div class="container2">
       <h3 id="hashtag"></h3>
       <h3 id="title" style="float: left;"><?php echo $row['title'];?></h3><br>
@@ -98,6 +100,7 @@ $row2=mysqli_fetch_array($result2);
     </div>
     <div class="menu">
       <a href="main.php"><img id="logo" src="img/logo.png"></a>
+      <h2>" 미림인이라면 다 모여라! "</h2>
       <a href="mypage.php"><h3 id="mypage">마이페이지</h3></a>
       <h3>|</h3>
       <a href="group_lookup.php"><h3 id="lookup">그룹조회</h3></a>
