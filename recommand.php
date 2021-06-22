@@ -18,7 +18,7 @@ $row = mysqli_fetch_array($result);
 	<title>다모임</title>
   <link rel='icon' type='images/png'href='img/logo.png'>
 	<link href="css/recommand.css" rel="stylesheet" type="text/css" />
-  <link href="css/common.css" rel="stylesheet" type="text/css" />
+  <link href="css/all.css" rel="stylesheet" type="text/css" />
 
   <script>
     function getAnswer() {
@@ -80,6 +80,7 @@ $row = mysqli_fetch_array($result);
      	</div>
        <div class="menu">
         <a href="main.php"><img id="logo" src="img/logo.png"></a>
+        <h2>" 미림인이라면 다 모여라! "</h2>
         <a href="mypage.php"><h3 id="mypage">마이페이지</h3></a>
         <h3>|</h3>
         <a href="group_lookup.php"><h3 id="lookup">그룹조회</h3></a>

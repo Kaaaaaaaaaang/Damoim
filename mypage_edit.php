@@ -11,7 +11,7 @@ if(!isset($_SESSION['user_name'])) echo("<script>location.href='login.html';</sc
 	<title>다모임</title>
     <link rel='icon' type='images/png'href='img/logo.png'>
 	<link href="css/mypage_edit_new.css" rel="stylesheet" type="text/css" />
-    <link href="css/common.css" rel="stylesheet" type="text/css" />
+    <link href="css/all.css" rel="stylesheet" type="text/css" />
     <script>
        var imgTarget = $('.preview-image .upload-hidden'); imgTarget.on('change', function(){ var parent = $(this).parent(); parent.children('.upload-display').remove(); if(window.FileReader){ //image 파일만 
        if (!$(this)[0].files[0].type.match(/image\//)) return; var reader = new FileReader(); reader.onload = function(e){ var src = e.target.result; parent.prepend('<div class="upload-display"><div class="upload-thumb-wrap"><img src="'+src+'" class="upload-thumb"></div></div>'); } reader.readAsDataURL($(this)[0].files[0]); } else { $(this)[0].select(); $(this)[0].blur(); var imgSrc = document.selection.createRange().text; parent.prepend('<div class="upload-display"><div class="upload-thumb-wrap"><img class="upload-thumb"></div></div>'); var img = $(this).siblings('.upload-display').find('img'); img[0].style.filter = "progid:DXImageTransform.Microsoft.AlphaImageLoader(enable='true',sizingMethod='scale',src=\""+imgSrc+"\")"; } });
@@ -63,6 +63,7 @@ if(!isset($_SESSION['user_name'])) echo("<script>location.href='login.html';</sc
      	</div>
           <div class="menu">
 			<a href="main.php"><img id="logo" src="img/logo.png"></a>
+            <h2>" 미림인이라면 다 모여라! "</h2>
 			<a href="mypage.php"><h3 id="mypage">마이페이지</h3></a>
 			<h3>|</h3>
 			<a href="group_lookup.php"><h3 id="lookup">그룹조회</h3></a>
