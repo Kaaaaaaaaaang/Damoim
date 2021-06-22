@@ -62,30 +62,36 @@ $row2=mysqli_fetch_array($result2);
         <h2>모임원 리스트</h2><br><br>
         <?php 
 						$sql3 = "select * from study";
-					  $result=mysqli_query($conn, $sql3);
+					  $result4=mysqli_query($conn, $sql3);
 						?>
 						<?php
-					while($row3 = mysqli_fetch_array($result)){
+					while($row3 = mysqli_fetch_array($result4)){
+            $sql4 = "select * from user id='".$row3['id']."'";
+					  $result5=mysqli_query($conn, $sql4);
+            while($row4 = mysqli_fetch_array($result5)){
         ?>
         <div class="member_list">
-          <img id="member_profile_img" src="<?php echo $row3['img_path'];?>"><br>
-          <span id="member_name"><?php echo $row3['name'];?></span><br>
-          <span id="member_hakgwa"><?php echo $row3['major'];?></span><br>
-          <span id="member_age"><?php echo $row3['grade'];?></span>
+          <img id="member_profile_img" src="<?php echo $row4['img_path'];?>"><br>
+          <span id="member_name"><?php echo $row4['name'];?></span><br>
+          <span id="member_hakgwa"><?php echo $row4['major'];?></span><br>
+          <span id="member_age"><?php echo $row4['grade'];?></span>
         </div>
-        <?php } ?>
+        <?php 
+            }  
+      } 
+        ?>
       </div>
       <?php
        if($row['leader']==$_SESSION['user_id']){
           ?>
-          <button id="group_apply_btn" onclick="location.href='login.html'">모임 수정 / 삭제하기</button><br><br>
+          <button id="group_apply_btn" onclick="location.href='group_edit.php?title=<?php echo $row['title'];?>'">모임 수정 / 삭제하기</button><br><br>
           <?php
        }else if(in_array($_SESSION['user_id'],$row['member'])){
           ?>
-          <button id="group_apply_btn" onclick="location.href='login.html'">모임 탈퇴하기</button><br><br>
+          <button id="group_apply_btn" onclick="location.href='group_.php'">모임 탈퇴하기</button><br><br>
           <?php
        }else{
-          ?><button id="group_apply_btn" onclick="location.href='login.html'">모임 가입 신청하기</button><br><br><?php
+          ?><button id="group_apply_btn" onclick="location.href='group_.php'">모임 가입 신청하기</button><br><br><?php
        }
       ?>
       
