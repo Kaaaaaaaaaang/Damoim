@@ -76,7 +76,7 @@ $searchSQL=$_GET['search'];
 							<h3 id="group_title"><?php echo $row['title']; ?></h3><br>
 							<p id="group_about"><?php echo $row['intro']; ?> </p>
 		          		</figcaption>
-		          		<a href="group.php"></a>
+		          		<a href="group.php?title=<?php echo $row['title'];?>"></a>
 	        		</figure>
      			</div>
 				 <?php

@@ -11,7 +11,7 @@
   <div class="container">
     <div class="container2">
       <div class="group_header_box">
-        <h3 id="hashtag">#자바 #안드로이드</h3>
+        <h3 id="hashtag"></h3>
         <h3 id="title" style="float: left;">수빈이와 함께하는 안드로이드 교실</h3>
         <button type="button" id="group_edit_btn" onclick="location.href='group_edit.html'"><img src="img/pen.png" alt=""> </button>
       </div>
