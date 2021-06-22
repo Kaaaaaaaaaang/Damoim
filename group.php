@@ -69,7 +69,6 @@ $row2=mysqli_fetch_array($result2);
         }else if(in_array($_SESSION['user_id'],$row['member'])){
           ?>
           <button id="group_apply_btn" onclick="location.href='login.html'">모임 탈퇴하기</button><br><br>
-          <button id="group_apply_btn" onclick="location.href='login.html'">멤버확인하기</button><br><br>
           <?
         }else{
           ?><button id="group_apply_btn" onclick="location.href='login.html'">모임 가입 신청하기</button><br><br><?
