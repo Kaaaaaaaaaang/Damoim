@@ -60,12 +60,20 @@ $row2=mysqli_fetch_array($result2);
       </div>
       <div class="member_box">
         <h2>모임원 리스트</h2><br><br>
+        <?php 
+						$sql3 = "select * from study";
+					  $result=mysqli_query($conn, $sql3);
+						?>
+						<?php
+					while($row3 = mysqli_fetch_array($result)){
+        ?>
         <div class="member_list">
-          <img id="member_profile_img" src="img/sample_proflie.png"><br>
-          <span id="member_name"><?php echo $row2['name'];?></span><br>
-          <span id="member_hakgwa"><?php echo $row2['major'];?></span><br>
-          <span id="member_age"><?php echo $row2['grade'];?></span>
+          <img id="member_profile_img" src="<?php echo $row3['img_path'];?>"><br>
+          <span id="member_name"><?php echo $row3['name'];?></span><br>
+          <span id="member_hakgwa"><?php echo $row3['major'];?></span><br>
+          <span id="member_age"><?php echo $row3['grade'];?></span>
         </div>
+        <?php } ?>
       </div>
       <?php
        if($row['leader']==$_SESSION['user_id']){
