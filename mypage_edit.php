@@ -11,8 +11,20 @@ if(!isset($_SESSION['user_name'])) echo("<script>location.href='login.html';</sc
 	<title>다모임</title>
     <link rel='icon' type='images/png'href='img/logo.png'>
 	<link href="css/mypage_edit.css" rel="stylesheet" type="text/css" />
-     <link href="css/common.css" rel="stylesheet" type="text/css" />
+    <link href="css/common.css" rel="stylesheet" type="text/css" />
+    <script>
+       $(document).ready(function(){ 
+            var fileTarget = $('#file'); 
+            fileTarget.on('change', function(){ // 값이 변경되면
+                var cur=$(".filebox input[type='file']").val();
+             $(".upload-name").val(cur);
+            }); 
+        }); 
+
+
+    </script>
 </head>
+
 <body style="overflow-x:hidden;">
      	<div class="container">
             <?php
@@ -45,13 +57,16 @@ if(!isset($_SESSION['user_name'])) echo("<script>location.href='login.html';</sc
                             <textarea id="about_me" name="intro"><?php echo $row['intro']?></textarea>
                             <button type="submit" id="Update_profile_btn" onclick="location.href='profile_update.php'">Update profile</button><br><br>
                         </div>
-                        <!-- 프로필 사진 수정 박스 -->
-                        <div class="edit_profile_img_box">
-                            <h1>Profile picture</h1>
-                            <img id="img_path" src="<?php echo $row['img_path']?>">
-                            <input type="file" id="profile_img_edit_btn" name="img_path" onchange="changeValue(this)">
-                            <button type="button" id="edit_img_box"><img src="img/pen.png">Edit</button>
+                        <div class="filebox"> 
+                        <label for="file">업로드</label> 
+                        <input type="file" id="file"> 
+                        
+                        <input class="upload-name" value="파일선택">
                         </div>
+
+
+
+
                     </form>
                 </div>
             </div>
@@ -67,11 +82,6 @@ if(!isset($_SESSION['user_name'])) echo("<script>location.href='login.html';</sc
 			<h3>|</h3>
 			<a href="recommand.php"><h3 id="recommand">추천받기</h3></a>
 		</div>
-<script type="text/javascript" src="js/mypage.js"></script> 
-<script LANGUAGE="javascript">
-    $(".edit_img_box").click( () => {
-        $("#profile_img_edit_btn").click();
-    })
-</script>
+
 </body>
 </html>

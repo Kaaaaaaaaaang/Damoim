@@ -1,16 +1,16 @@
- /* Demo purposes only */
- $(function () {
+//  /* Demo purposes only */
+//  $(function () {
 
-  $('#edit_img_box').click(function (e) {
+//   $('#edit_img_box').click(function (e) {
   
-    e.preventDefault();
+//     e.preventDefault();
     
-    $('#profile_img_edit_btn').click();
+//     $('#profile_img_edit_btn').click();
   
-  });
+//   });
   
-  });
-  function changeValue(obj){
-  alert(obj.value);
+//   });
+//   function changeValue(obj){
+//   alert(obj.value);
 
-}
+// }
