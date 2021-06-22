@@ -18,13 +18,13 @@ $row2=mysqli_fetch_array($result2);
   <meta charset="utf-8">
 	<title>다모임</title>
   <link rel='icon' type='images/png'href='img/logo.png'>
-	<link href="css/group_new.css" rel="stylesheet" type="text/css" />
-  <link href="css/common.css" rel="stylesheet" type="text/css" />
+	<link href="css/new_group.css" rel="stylesheet" type="text/css" />
+  <link href="css/all.css" rel="stylesheet" type="text/css" />
 </head>
 <body style="overflow-x:hidden;">
 <div class="container">
   <img src="img/backbackback.png"><br>
-  <img src="img/backback.png">
+  <img src="img/backback.png" style="vertical-align:text-bottom">
   <div class="container2">
       <h3 id="hashtag"></h3>
       <h3 id="title" style="float: left;"><?php echo $row['title'];?></h3><br>
