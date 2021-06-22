@@ -23,7 +23,7 @@ $row2=mysqli_fetch_array($result2);
 </head>
 <body style="overflow-x:hidden;">
 <div class="container">
-    <div class="container2">
+  <div class="container2">
       <h3 id="hashtag"></h3>
       <h3 id="title" style="float: left;"><?php echo $row['title'];?></h3><br>
       <hr>
@@ -45,7 +45,7 @@ $row2=mysqli_fetch_array($result2);
         </div>
         <div class="ab">
           <p id="head_about">
-            <? echo $row2['intro'];?>
+            <?php echo $row2['intro'];?>
           </p>
         </div>
       </div>
@@ -68,21 +68,20 @@ $row2=mysqli_fetch_array($result2);
         </div>
       </div>
       <?php
-        if($row['leader']==$_SESSION['user_id']){
+       if($row['leader']==$_SESSION['user_id']){
           ?>
           <button id="group_apply_btn" onclick="location.href='login.html'">모임 수정 / 삭제하기</button><br><br>
           <?
-        }else if(in_array($_SESSION['user_id'],$row['member'])){
+       }else if(in_array($_SESSION['user_id'],$row['member'])){
           ?>
           <button id="group_apply_btn" onclick="location.href='login.html'">모임 탈퇴하기</button><br><br>
           <?
-        }else{
+       }else{
           ?><button id="group_apply_btn" onclick="location.href='login.html'">모임 가입 신청하기</button><br><br><?
-        }
+       }
       ?>
       
     </div>
-  </div>
     <div class="menu">
       <a href="main.php"><img id="logo" src="img/logo.png"></a>
       <a href="mypage.php"><h3 id="mypage">마이페이지</h3></a>
@@ -93,6 +92,6 @@ $row2=mysqli_fetch_array($result2);
       <h3>|</h3>
       <a href="recommand.php"><h3 id="recommand">추천받기</h3></a>
     </div>
-  </div>
+</div>
 </body>
 </html>
