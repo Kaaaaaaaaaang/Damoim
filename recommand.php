@@ -5,6 +5,7 @@ if(!isset($_SESSION['user_name'])) echo("<script>location.href='login.html';</sc
 
 
 $q_count = $_GET['q_count'];
+if(!isset($q_count)) $q_count=1;
 $sql = "SELECT * FROM reccommand WHERE num =".$q_count;
 $result=mysqli_query($conn, $sql);
 $row = mysqli_fetch_array($result);
