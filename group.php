@@ -60,7 +60,22 @@ $row2=mysqli_fetch_array($result2);
       <span>시간</span> <span id="time"><?php echo $row['start_time'];?>시 - <?php echo $row['end_time'];?>시</span>
       </div>
       </div>
-      <button id="group_apply_btn" onclick="location.href='login.html'">모임 가입 신청하기</button><br><br>
+      <?php
+        if($row['leader']==$_SESSION['user_id']){
+          ?>
+          <button id="group_apply_btn" onclick="location.href='login.html'">모임 수정 / 삭제하기</button><br><br>
+          <button id="group_apply_btn" onclick="location.href='login.html'">멤버확인하기</button><br><br>
+          <?
+        }else if(in_array($_SESSION['user_id'],$row['member'])){
+          ?>
+          <button id="group_apply_btn" onclick="location.href='login.html'">모임 탈퇴하기</button><br><br>
+          <button id="group_apply_btn" onclick="location.href='login.html'">멤버확인하기</button><br><br>
+          <?
+        }else{
+          ?><button id="group_apply_btn" onclick="location.href='login.html'">모임 가입 신청하기</button><br><br><?
+        }
+      ?>
+      
     </div>
   </div>
     <div class="menu">
