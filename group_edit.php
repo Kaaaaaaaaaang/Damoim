@@ -2,9 +2,9 @@
 session_start();
 include "db.php";
 if(!isset($_SESSION['user_name'])) echo("<script>location.href='login.html';</script>"); 
-$group_title=$_GET['title'];
+$title=$_GET['title'];
 
-$sql = "SELECT * FROM study WHERE title ='".$group_title."'";
+$sql = "SELECT * FROM study WHERE title ='".$title."'";
 $result=mysqli_query($conn, $sql)or die(mysqli_error($conn));
 $row=mysqli_fetch_array($result);
 ?>
@@ -23,11 +23,6 @@ $row=mysqli_fetch_array($result);
 <body>
 	<div class="container">
     <div class="container2">
-			<?php
-        $sql = "SELECT * FROM study WHERE title ='".$_SESSION['user_id']."'";
-        $result=mysqli_query($conn, $sql)or die(mysqli_error($conn));
-        $row=mysqli_fetch_array($result);
-      ?>
    		<form>
 		  <select name="people" style="color: #000000; background-color: #00000000; float: left; margin-left: 4.5%;">
 		    <option value="none" style="color: #000000;">모임 최대 인원수</option>
