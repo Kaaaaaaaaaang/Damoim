@@ -30,9 +30,9 @@ $searchSQL=$_GET['search'];
 				<div class="layout_box">
 					<span>학년</span>
 					<div class="layout">
-						<label><input required type="radio" name="age" value="1학년"> 1학년</label>
-						<label><input required type="radio" name="age" value="2학년"> 2학년</label>
-						<label><input required type="radio" name="age" value="3학년"> 3학년</label>
+						<label><input required type="radio" name="grade" value="1학년"> 1학년</label>
+						<label><input required type="radio" name="grade" value="2학년"> 2학년</label>
+						<label><input required type="radio" name="grade" value="3학년"> 3학년</label>
 					</div>
 				</div>
 				<div class="layout_box">
