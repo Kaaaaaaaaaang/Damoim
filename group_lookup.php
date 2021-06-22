@@ -52,33 +52,34 @@ $searchSQL=$_GET['search'];
 					if(isset($searchSQL)) {
 						$sql = "select * from study ".$searchSQL;
 						$sql1 = "select COUNT(*) FROM study ".$searchSQL;
-               			$cnt=mysqli_query($conn, $sql1);
+
 					}
 					
 					else {
 						$sql = "select * from study";
 						$sql1 = "select COUNT(*) FROM study";
-               			$cnt=mysqli_query($conn, $sql1);
 					}
-					$result=mysqli_query($conn, $sql);
-					if($cnt==0){
+
+					$cnt=mysqli_query($conn, $sql1);
+					$result=mysqli_query($conn, $sql1);
+					if($result==0){
 						?>
 						<h2 style="padding-right: 8%;">조회 결과가 없습니다. 그룹을 생성해 보세요! </h2>
 						<?php
 					}else{
 					while($row = mysqli_fetch_array($result)){
 				?>
-     			<div class="list_box">
-     				<figure class="group_about_box">
-		          		<img id="moim" src="<?php echo $row['img_path']; ?>">
-			        	<figcaption>
-							<br><br><br>  
-							<h3 id="group_title"><?php echo $row['title']; ?></h3><br>
-							<p id="group_about"><?php echo $row['intro']; ?> </p>
-		          		</figcaption>
-		          		<a href="group.php?title=<?php echo $row['title'];?>"></a>
-	        		</figure>
-     			</div>
+						<div class="list_box">
+							<figure class="group_about_box">
+								<img id="moim" src="<?php echo $row['img_path']; ?>">
+								<figcaption>
+									<br><br><br>  
+									<h3 id="group_title"><?php echo $row['title']; ?></h3><br>
+									<p id="group_about"><?php echo $row['intro']; ?> </p>
+								</figcaption>
+								<a href="group.php?title=<?php echo $row['title'];?>"></a>
+							</figure>
+						</div>
 				 <?php
 						}
 					}
