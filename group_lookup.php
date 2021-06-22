@@ -50,18 +50,15 @@ $searchSQL=$_GET['search'];
      		<div class="list">
 				<?php
 					if(isset($searchSQL)) {
-						$sql = "select * from study ".$searchSQL;
-						$sql1 = "select COUNT(*) FROM study ".$searchSQL;
+						$sql = "select COUNT(*) FROM study ".$searchSQL;
 
 					}
 					
 					else {
-						$sql = "select * from study";
-						$sql1 = "select COUNT(*) FROM study";
+						$sql = "select COUNT(*) FROM study";
 					}
 
-					$cnt=mysqli_query($conn, $sql1);
-					$result=mysqli_query($conn, $sql1);
+					$result=mysqli_query($conn, $sql);
 					if($result==0){
 						?>
 						<h2 style="padding-right: 8%;">조회 결과가 없습니다. 그룹을 생성해 보세요! </h2>
@@ -101,14 +98,5 @@ $searchSQL=$_GET['search'];
 		</div>
 	</div>
 
-
-	<script type="text/javascript">
-		function handleOnInput(el, maxlength) {
-		  if(el.value.length > maxlength)  {
-		    el.value 
-		      = el.value.substr(0, maxlength);
-		  }
-		}
-	</script>
 </body>
 </html>
