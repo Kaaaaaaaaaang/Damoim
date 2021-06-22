@@ -13,13 +13,8 @@ if(!isset($_SESSION['user_name'])) echo("<script>location.href='login.html';</sc
 	<link href="css/mypage_edit.css" rel="stylesheet" type="text/css" />
     <link href="css/common.css" rel="stylesheet" type="text/css" />
     <script>
-       $(document).ready(function(){ 
-            var fileTarget = $('#file'); 
-            fileTarget.on('change', function(){ // 값이 변경되면
-                var cur=$(".filebox input[type='file']").val();
-             $(".upload-name").val(cur);
-            }); 
-        }); 
+       var imgTarget = $('.preview-image .upload-hidden'); imgTarget.on('change', function(){ var parent = $(this).parent(); parent.children('.upload-display').remove(); if(window.FileReader){ //image 파일만 
+       if (!$(this)[0].files[0].type.match(/image\//)) return; var reader = new FileReader(); reader.onload = function(e){ var src = e.target.result; parent.prepend('<div class="upload-display"><div class="upload-thumb-wrap"><img src="'+src+'" class="upload-thumb"></div></div>'); } reader.readAsDataURL($(this)[0].files[0]); } else { $(this)[0].select(); $(this)[0].blur(); var imgSrc = document.selection.createRange().text; parent.prepend('<div class="upload-display"><div class="upload-thumb-wrap"><img class="upload-thumb"></div></div>'); var img = $(this).siblings('.upload-display').find('img'); img[0].style.filter = "progid:DXImageTransform.Microsoft.AlphaImageLoader(enable='true',sizingMethod='scale',src=\""+imgSrc+"\")"; } });
 
 
     </script>
@@ -57,12 +52,12 @@ if(!isset($_SESSION['user_name'])) echo("<script>location.href='login.html';</sc
                             <textarea id="about_me" name="intro"><?php echo $row['intro']?></textarea>
                             <button type="submit" id="Update_profile_btn" onclick="location.href='profile_update.php'">Update profile</button><br><br>
                         </div>
-                        <div class="filebox"> 
-                        <label for="file">업로드</label> 
-                        <input type="file" id="file"> 
-                        
-                        <input class="upload-name" value="파일선택">
+                        <div class="filebox preview-image"> 
+                        <input class="upload-name" value="파일선택" disabled="disabled" > 
+                        <label for="input-file">업로드</label> 
+                        <input type="file" id="input-file" class="upload-hidden"> 
                         </div>
+
 
 
 
