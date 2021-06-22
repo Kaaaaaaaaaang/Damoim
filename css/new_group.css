@@ -6,9 +6,10 @@
 	width: 80%; height: 2000px;
 	margin: 0px auto;
 	position: absolute;
-	top:0; left:200;
+	top:0; left:0;
 	background-color: white;
 	margin-top: 13%;
+    margin-left: 10%;
 	border: solid 1px #FF002E;
 	border-radius: 20px;
 }
