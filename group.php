@@ -23,6 +23,8 @@ $row2=mysqli_fetch_array($result2);
 </head>
 <body style="overflow-x:hidden;">
 <div class="container">
+  <img src="img/backbackback.png"><br>
+  <img src="img/backback.png">
   <div class="container2">
       <h3 id="hashtag"></h3>
       <h3 id="title" style="float: left;"><?php echo $row['title'];?></h3><br>
@@ -98,6 +100,7 @@ $row2=mysqli_fetch_array($result2);
     </div>
     <div class="menu">
       <a href="main.php"><img id="logo" src="img/logo.png"></a>
+      <h2>" 미림인이라면 다 모여라! "</h2>
       <a href="mypage.php"><h3 id="mypage">마이페이지</h3></a>
       <h3>|</h3>
       <a href="group_lookup.php"><h3 id="lookup">그룹조회</h3></a>
