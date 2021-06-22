@@ -1,3 +1,14 @@
+<?php
+session_start();
+include "db.php";
+if(!isset($_SESSION['user_name'])) echo("<script>location.href='login.html';</script>"); 
+$group_title=$_GET['title'];
+
+$sql = "SELECT * FROM study WHERE title ='".$group_title."'";
+$result=mysqli_query($conn, $sql)or die(mysqli_error($conn));
+$row=mysqli_fetch_array($result);
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,6 +23,11 @@
 <body>
 	<div class="container">
     <div class="container2">
+			<?php
+        $sql = "SELECT * FROM study WHERE title ='".$_SESSION['user_id']."'";
+        $result=mysqli_query($conn, $sql)or die(mysqli_error($conn));
+        $row=mysqli_fetch_array($result);
+      ?>
    		<form>
 		  <select name="people" style="color: #000000; background-color: #00000000; float: left; margin-left: 4.5%;">
 		    <option value="none" style="color: #000000;">모임 최대 인원수</option>
@@ -26,9 +42,9 @@
 		    <option value="9명" style="color: #000000;">9명</option>
 		    <option value="10명" style="color: #000000;">10명</option>
 		  </select>
-		  <h3 id="category" style="color: #000000; background-color: #00000000; margin-left: 5%; float: left;">전공과목 스터디</h3>
+		  <h3 id="category" style="color: #000000; background-color: #00000000; margin-left: 5%; float: left;"><?php echo $row['category'];?></h3>
 			<div class="layout_group_title_box"  style="text-align: left;">
-			<h4 id="group_name" style="color: #000000; margin-left: 5%; float: left; margin-bottom: 5%;">모임명</h4>
+			<h4 id="group_name" style="color: #000000; margin-left: 5%; float: left; margin-bottom: 5%;"><?php echo $row['title'];?></h4>
 				</div>
 			<div class="layout_box">
 					<span>가입 가능 학년</span>
@@ -67,16 +83,16 @@
 	      <div class="layout_box">
 					<span>모임 시간</span>
 					<div class="layout">
-						<input type='number' name="start" id="start_time" maxlength='2'></input>
+						<input type='number' name="start" id="start_time" maxlength='2' value="<?php echo $row['start_time'];?>"></input>
 						<span style="margin-right: 5%; margin-left: 0%;">시 &nbsp;&nbsp; ~</span>
-						<input type='number' name="end" id="end_time" maxlength='2'></input>
+						<input type='number' name="end" id="end_time" maxlength='2' value="<?php echo $row['end_time'];?>"></input>
 						<span style="margin-left: 0%;">시</span>
 					</div>
 				</div>
 				<div class="layout_group_about_box">
 					<span>모임 설명</span>
 					<br>
-					<textarea id="about"></textarea>
+					<textarea id="about"><?php echo $row['intro'];?></textarea>
 				</div>
 				<div class="layout_group_img">
 					<span>그룹 사진</span>
