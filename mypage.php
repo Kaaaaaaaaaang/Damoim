@@ -12,6 +12,7 @@ if(!isset($_SESSION['user_name'])) echo("<script>location.href='login.html';</sc
 	<link href="css/mypage.css" rel="stylesheet" type="text/css" />
      <link href="css/common.css" rel="stylesheet" type="text/css" />
 </head>
+
 <body style="overflow-x:hidden;">
      	<div class="container2" style="float: left;">
      		<div class="box" style="background: #BDBDBD;"><img id="profile_img" src="<?php echo $row['img_path']?>"></div>
