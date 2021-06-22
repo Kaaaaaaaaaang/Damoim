@@ -25,7 +25,7 @@ $row2=mysqli_fetch_array($result2);
 <div class="container">
     <div class="container2">
       <h3 id="hashtag"></h3>
-      <h3 id="title" style="float: left;"><?php echo $row['title'];?></h3>
+      <h3 id="title" style="float: left;"><?php echo $row['title'];?></h3><br>
       <hr>
       <div class="about_box">
         <h2>스터디 소개</h2>
