@@ -23,8 +23,8 @@ $row2=mysqli_fetch_array($result2);
 </head>
 <body style="overflow-x:hidden;">
 <div class="container">
-  <img src="img/backbackback.png"><br>
-  <img src="img/backback.png" style="position:absolute; top:120%; margin-top:-100px;">
+  <img src="img/backbackback.png" style="margin-top: 15%;"><br>
+  <img src="img/backback.png" style="position:absolute; top:150%; margin-top:-100px;">
   <div class="container2">
       <h3 id="hashtag"></h3>
       <h3 id="title" style="float: left;"><?php echo $row['title'];?></h3><br>
