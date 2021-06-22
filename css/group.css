@@ -71,9 +71,11 @@ h2 {
 .about_box {
 	font-family: 'Noto Sans KR', sans-serif;
 	width: 75%;
-	margin-top: 5%;
+	margin-top: 4%;
 	margin-left: 15%;
 	float: left;
+	padding-bottom: 10%;
+	border-bottom: solid 2px #FF002E;
 }
 
 .ab {
@@ -94,9 +96,11 @@ h2 {
 	margin-top: 4%;
 	margin-left: 15%;
 	float: left;
+	padding-bottom: 10%;
+	border-bottom: solid 2px #FF002E;
 }
 
-.head_about_box .box {
+.head_about_box .box, .member_box .member_list {
 	width: auto;
 	float: left;
 	text-align: center;
@@ -106,17 +110,23 @@ h2 {
 	width: 100px;
 	height: 100px;
 	margin-top: 30%;
+	margin-bottom: 5%;
 }
 
-.head_about_box span {
+.member_box img {
+	width: 100px;
+	height: 100px;
+	margin-bottom: 5%;
+}
+
+.head_about_box span, .member_box span {
 	font-family: 'Noto Sans KR', sans-serif;
 	font-weight: 100;
 }
 
-#head_name {
+#head_name, #member_name {
 	font-weight: 300;
 	font-size: 1.2em;
-	margin-top: 5%;
 }
 
 .information_box {
@@ -125,11 +135,37 @@ h2 {
 	margin-top: 4%;
 	margin-left: 15%;
 	float: left;
+	padding-bottom: 10%;
+	border-bottom: solid 2px #FF002E;
 }
 
 .information_box span {
 	font-weight: 300;
 	font-size: 1.2em;
+}
+
+.member_box {
+	font-family: 'Noto Sans KR', sans-serif;
+	width: 75%;
+	margin-top: 4%;
+	margin-left: 15%;
+	float: left;
+}
+
+.member_list {
+	float: left;
+	margin-left: 6%;
+	margin-top: 5%;
+	border: solid 1.5px #FF002E;
+	border-radius: 20px;
+	background-color: white;
+	padding: 2.7%
+}
+
+.member_list:hover {
+	border: solid 1.5px #FF002E;
+	background-color: #ff535c;
+	color: #FFFFFF;
 }
 
 .container2 hr { 
