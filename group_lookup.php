@@ -63,7 +63,7 @@ $searchSQL=$_GET['search'];
 					$result=mysqli_query($conn, $sql);
 					if($cnt==0){
 						?>
-						<h2>조회 결과가 없습니다. 그룹을 생성해 보세요! </h2>
+						<h2 style="padding-right: 8%;">조회 결과가 없습니다. 그룹을 생성해 보세요! </h2>
 						<?php
 					}else{
 					while($row = mysqli_fetch_array($result)){
