@@ -9,7 +9,7 @@ if(!isset($_SESSION['user_name'])) echo("<script>location.href='login.html';</sc
 	<meta charset="utf-8">
 	<title>다모임</title>
      <link rel='icon' type='images/png'href='img/logo.png'>
-	<link href="css/mypage.css" rel="stylesheet" type="text/css" />
+	<link href="css/mypage_new.css" rel="stylesheet" type="text/css" />
      <link href="css/common.css" rel="stylesheet" type="text/css" />
 </head>
 

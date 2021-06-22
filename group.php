@@ -18,7 +18,7 @@ $row2=mysqli_fetch_array($result2);
   <meta charset="utf-8">
 	<title>다모임</title>
   <link rel='icon' type='images/png'href='img/logo.png'>
-	<link href="css/group.css" rel="stylesheet" type="text/css" />
+	<link href="css/group_new.css" rel="stylesheet" type="text/css" />
   <link href="css/common.css" rel="stylesheet" type="text/css" />
 </head>
 <body style="overflow-x:hidden;">
