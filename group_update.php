@@ -51,7 +51,7 @@ if(move_uploaded_file($_FILES['study_img']['tmp_name'], $uploadfile)){
   move_uploaded_file($tmp_name,$uploaddir);
 }
 
-$sql  = "UPDATE study SET max_mem='$people', grade='$grade', major='$major', how='$how', study_day='$day', start_time='$start', end_time='$end', img_path='$img_ad', intro='$intro' WHERE title='$title'";
+$sql  = "UPDATE study SET max_mem=$people, grade='$grade', major='$major', how='$how', study_day='$day', start_time=$start, end_time=$end, img_path='$img_ad', intro='$intro' WHERE title='$title'";
 
 $result = mysqli_query($conn, $sql);
 
@@ -64,7 +64,6 @@ if($result==true){
 
 <?php
 }else{
-  echo $result;
 ?>
 
 <script>
