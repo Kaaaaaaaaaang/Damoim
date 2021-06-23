@@ -7,6 +7,8 @@ $title=$_GET['title'];
 $sql = "SELECT * FROM study WHERE title ='".$title."'";
 $result=mysqli_query($conn, $sql)or die(mysqli_error($conn));
 $row=mysqli_fetch_array($result);
+
+echo $title;
 ?>
 
 <!DOCTYPE html>
@@ -26,8 +28,8 @@ $row=mysqli_fetch_array($result);
    		<form method="post" action="group_update.php"  enctype="multipart/form-data">
 		  <select name="people" style="color: #000000; background-color: #00000000; float: left; margin-left: 4.5%;">
 		    <option value="none" style="color: #000000;">모임 최대 인원수</option>
-				<option value="1명" style="color: #000000;">1명</option>
-				<option value="2명" style="color: #000000;">2명</option>
+			<option value="1명" style="color: #000000;">1명</option>
+			<option value="2명" style="color: #000000;">2명</option>
 		    <option value="3명" style="color: #000000;">3명</option>
 		    <option value="4명" style="color: #000000;">4명</option>
 		    <option value="5명" style="color: #000000;">5명</option>
@@ -42,13 +44,13 @@ $row=mysqli_fetch_array($result);
 			<h4 id="group_name" style="color: #000000; margin-left: 5%; float: left; margin-bottom: 5%;"><?php echo $row['title'];?></h4>
 				</div>
 			<div class="layout_box">
-					<span>가입 가능 학년</span>
-					<div class="layout">
-						<label><input type="checkbox" name="grade[]" value="1학년"> 1학년</label>
-	      		<label><input type="checkbox" name="grade[]" value="2학년"> 2학년</label>
-	      		<label><input type="checkbox" name="grade[]" value="3학년"> 3학년</label>
-	      	</div>
-      	</div>
+				<span>가입 가능 학년</span>
+				<div class="layout">
+					<label><input type="checkbox" name="grade[]" value="1학년"> 1학년</label>
+	    	  		<label><input type="checkbox" name="grade[]" value="2학년"> 2학년</label>
+	      			<label><input type="checkbox" name="grade[]" value="3학년"> 3학년</label>
+	      		</div>
+      		</div>
 				 <div class="layout_box">
 					<span>학과</span>
 					<div class="layout">
@@ -93,8 +95,8 @@ $row=mysqli_fetch_array($result);
 					<span>그룹 사진</span>
 					<input type="file" id="group_img_src" name="study_img"></input>
 				</div>
-     		<button id="group_create_btn" onclick="location.href='group_update.php'" type="submit" >모임 수정하기</button>
-    		<button id="group_delete_btn" onclick="location.href='group_delete.php'" style="margin-bottom: 30%;">모임 삭제하기</button>
+     		<button id="group_create_btn" onclick="location.href='group_update.php?title=<?php echo $row['title'];?>'" type="submit" >모임 수정하기</button>
+    		<button id="group_delete_btn" onclick="location.href='group_delete.php?title=<?php echo $row['title'];?>'" style="margin-bottom: 30%;">모임 삭제하기</button>
     	</form>
 		</div>
 		<div class="menu">

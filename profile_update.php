@@ -8,19 +8,26 @@ $name = $_POST['name'];
 $email = $_POST['email'];
 $intro = $_POST['intro'];
 
-$uploaddir = "profile/";
-$uploadfile = $uploaddir.$_FILES['img_path']['name'];
-$f_name = $_FILES['img_path']['name'];
-$f_type = $_FILES['img_path']['type'];
-$f_size = $_FILES['img_path']['size'];
-$tmp_name= $_FILES['img_path']['tmp_name'];
-$profile_image = $uploadfile;
-
-if(move_uploaded_file($_FILES['img_path']['tmp_name'], $uploadfile)){
-  $profile_image = $uploadfile;
-  move_uploaded_file($tmp_name,$uploaddir);
+$sql = "SELECT * FROM user WHERE id ='".$id."'";
+$result=mysqli_query($conn, $sql)or die(mysqli_error($conn));
+$row=mysqli_fetch_array($result);
+if($_FILES['img_path']['name']==null) {
+  $uploadfile = $row['img_path'];
+} else {
+  $uploaddir = 'profile/';
+  $uploadfile = $uploaddir.$_FILES['img_path']['name'];
+  $f_name = $_FILES['img_path']['name'];
+  $f_type = $_FILES['img_path']['type'];
+  $f_size = $_FILES['img_path']['size'];
+  $tmp_name= $_FILES['img_path']['tmp_name'];
+  $img_ad = $uploadfile;
+  if(move_uploaded_file($_FILES['img_path']['tmp_name'], $uploadfile)){
+    $img_ad = $uploadfile;
+    move_uploaded_file($tmp_name,$uploaddir);
+  }
+  echo $uploadfile;
 }
-echo $uploadfile;
+
 
 $sql = "UPDATE user SET name='$name', email='$email', img_path='$profile_image', intro='$intro' WHERE id='$id';";
 

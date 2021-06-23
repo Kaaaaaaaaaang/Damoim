@@ -43,18 +43,18 @@ if(!isset($_SESSION['user_name'])) echo("<script>location.href='login.html';</sc
                     <form method="post" action="profile_update.php" enctype="multipart/form-data">
                         <div class="edit_profile_info_box">
                             <h1>Name</h1>
-                            <input type="text" name="name" id="name" value="<?php echo $row['name']?>">
+                            <input type="text" name="name" id="name" value="<?php echo $row['name'];?>">
                             <h1>Department</h1>
                             <h4 id="major"><?php echo $row['major']?></h4>
                             <h1>Email</h1>
-                            <input type="email" name="email" id="email" style="margin-bottom: 4%;" value="<?php echo $row['email']?>">
+                            <input type="email" name="email" id="email" style="margin-bottom: 4%;" value="<?php echo $row['email'];?>">
                             <h1>About me</h1>
-                            <textarea id="about_me" name="intro"><?php echo $row['intro']?></textarea>
+                            <textarea id="about_me" name="intro"><?php echo $row['intro'];?></textarea>
                             <button type="submit" id="Update_profile_btn" onclick="location.href='profile_update.php'">Update profile</button><br><br>
                         </div>
                         <div class="filebox">
                             <label for="ex_file">profile upload</label>
-                            <input type="file" id="ex_file" name="img_path">
+                            <input type="file" id="ex_file" name="img_path" value="<?php echo $row['img_path'];?>">
                         </div>
                     </form>
                 </div>
