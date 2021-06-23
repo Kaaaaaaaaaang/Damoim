@@ -8,7 +8,7 @@ $email=$_POST['userEmail'];
 $major=$_POST['userMajor'];
 $grade = $_POST['userGrade'];
 
-$sql  = "INSERT INTO user (id,pass,name,email,major,grade) VALUES('$id','$pw','$name','$email','$major','$grade');";
+$sql  = "INSERT INTO user (id,pass,name,email,major,grade) VALUES('$id','$pw','$name','$email','$major','$grade')";
 
 $result = mysqli_query($conn, $sql);
 if($result==true){
