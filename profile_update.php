@@ -29,7 +29,7 @@ if($_FILES['img_path']['name']==null) {
 }
 
 
-$sql = "UPDATE user SET name='$name', email='$email', img_path='$profile_image', intro='$intro' WHERE id='$id';";
+$sql = "UPDATE user SET name='$name', email='$email', img_path='$uploadfile', intro='$intro' WHERE id='$id';";
 
 $result = mysqli_query($conn, $sql);
 

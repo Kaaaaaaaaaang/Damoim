@@ -15,12 +15,13 @@ if(!isset($_SESSION['user_name'])) echo("<script>location.href='login.html';</sc
 
 <body style="overflow-x:hidden;">
      	<div class="container2" style="float: left;">
-     		<div class="box" style="background: #BDBDBD;"><img id="profile_img" src="<?php echo $row['img_path']?>"></div>
                <?php
                     $sql = "SELECT * FROM user WHERE id ='".$_SESSION['user_id']."'";
                     $result=mysqli_query($conn, $sql)or die(mysqli_error($conn));
                     $row=mysqli_fetch_array($result);
                ?>
+     		<div class="box" style="background: #BDBDBD;"><img id="profile_img" src="<?php echo $row['img_path']?>"></div>
+               
      		<h3 id="mypage_name"><?php echo $row['name'];?></h3>
                <div class="layout">
                     <img src="img/building.png" style="width: 10%; float: left; margin-right: 4%;">
