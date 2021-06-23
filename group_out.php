@@ -11,12 +11,18 @@ $row=mysqli_fetch_array($result);
 
 $member = explode("|", $row['member']);
 
-$student = array_search($_SESSION['user_name'], $member);
+$student = array_search($_SESSION['user_id'], $member);
+
 unset($member[$student]);
 
-foreach($member as $value) {
-  $save = implode("|", $value);
+if(count($member)<=1){
+  $save=$member[0];
+}else{
+  foreach($member as $value) {
+    $save = implode("|", $value);
+  }
 }
+
 $mem = $save;
 
 $sql = "UPDATE study SET member='$mem' WHERE title='$title'";
