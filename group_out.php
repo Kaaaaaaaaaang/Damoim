@@ -10,10 +10,10 @@ $result = mysqli_query($conn, $sql);
 $row=mysqli_fetch_array($result);
 
 $member = explode("|", $row['member']);
-$student = array_search($_SESSION['user_name'], $member);
-unset($member[$student]);
 
 $mem_array = array($member);
+$student = array_search($_SESSION['user_name'], $mem_array);
+unset($mem_array[$student]);
 
 foreach($mem_array as $value) {
   $save = implode("|", $value);
