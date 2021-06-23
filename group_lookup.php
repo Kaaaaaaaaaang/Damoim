@@ -10,13 +10,14 @@ $searchSQL=$_GET['search'];
 	<meta charset="utf-8">
 	<title>다모임</title>
 	<link rel='icon' type='images/png'href='img/logo.png'>
-	<link href="css/group_lookup.css" rel="stylesheet" type="text/css" />
+	<link href="css/new_group_lookup.css" rel="stylesheet" type="text/css" />
 	<link href="css/all.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
 	<div class="container">
+  		<img src="img/backback.png" style="position:absolute; top:50%; margin-top:-100px;">
     	<div class="container2">
-    		<span>그룹조회</span>
+    		<span style="color: black;">그룹조회</span>
 			<form method="POST" action="search.php">
 				<div class="category_box">
 					<div class="layout_box">
@@ -27,20 +28,21 @@ $searchSQL=$_GET['search'];
 							<label><input required type="radio" name="major" value="뉴미디어디자인과"> 디자인과</label>
 						</div>
 					</div>
-				<div class="layout_box">
-					<span>학년</span>
-					<div class="layout">
-						<label><input required type="radio" name="grade" value="1학년"> 1학년</label>
-						<label><input required type="radio" name="grade" value="2학년"> 2학년</label>
-						<label><input required type="radio" name="grade" value="3학년"> 3학년</label>
+					<div class="layout_box">
+						<span>학년</span>
+						<div class="layout">
+							<label><input required type="radio" name="grade" value="1학년"> 1학년</label>
+							<label><input required type="radio" name="grade" value="2학년"> 2학년</label>
+							<label><input required type="radio" name="grade" value="3학년"> 3학년</label>
+						</div>
 					</div>
-				</div>
-				<div class="layout_box">
-					<span>카테고리</span>
-					<div class="layout">
-						<label><input required type="radio" name="category" value="취업 준비"> 취업 준비</label>
-						<label><input required type="radio" name="category" value="전공과목 스터디"> 전공과목 스터디</label>
-						<label><input required type="radio" name="category" value="인문과목 스터디"> 인문과목 스터디</label>
+					<div class="layout_box">
+						<span>카테고리</span>
+						<div class="layout">
+							<label><input required type="radio" name="category" value="취업 준비"> 취업 준비</label>
+							<label><input required type="radio" name="category" value="전공과목 스터디"> 전공과목 스터디</label>
+							<label><input required type="radio" name="category" value="인문과목 스터디"> 인문과목 스터디</label>
+						</div>
 					</div>
 				</div>
 				<div class="layout_box">
@@ -86,8 +88,6 @@ $searchSQL=$_GET['search'];
 				 ?>
 			</div>	
      	</div>
-     	<!--하단 빈공간-->
-		<div class="footer"></div>
 		</div>
 		<div class="menu">
 			<a href="main.php"><img id="logo" src="img/logo.png"></a>
