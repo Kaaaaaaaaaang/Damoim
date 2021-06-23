@@ -9,10 +9,11 @@ $sql = "SELECT * FROM study WHERE title='$title'";
 $result = mysqli_query($conn, $sql);
 $row=mysqli_fetch_array($result);
 
-$member = explode('|', $row['member']);
-$student = array_search($_SESSION['user_name'], $member);
-array_splice($member, $student, 1);
 
+$member = $row['member'];
+$student = array_search($_SESSION['user_name'], $member);
+
+unset($member[$student]);
 
 foreach($member as $value) {
   $result = implode("|", $value);
