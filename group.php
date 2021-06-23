@@ -60,15 +60,16 @@ $row2=mysqli_fetch_array($result2);
       </div>
       <div class="member_box">
         <h2>모임원 리스트</h2><br><br>
-        <?php 
-						$sql3 = "select * from study";
-					  $result4=mysqli_query($conn, $sql3);
-						?>
+
 						<?php
-					while($row3 = mysqli_fetch_array($result4)){
-            $sql4 = "select * from user id='".$row3['id']."'";
-					  $result5=mysqli_query($conn, $sql4);
-            while($row4 = mysqli_fetch_array($result5)){
+            $sql3 = "SELECT * from study";
+					  $result4=mysqli_query($conn, $sql3);
+					  while($row3 = mysqli_fetch_array($result4)){
+              echo $row3['id'];
+              $sql4 = "SELECT * from user id='".$row3['id']."'";
+              echo $sql4;
+					    $result5=mysqli_query($conn, $sql4);
+              while($row4 = mysqli_fetch_array($result5)){
         ?>
         <div class="member_list">
           <img id="member_profile_img" src="<?php echo $row4['img_path'];?>"><br>
@@ -78,7 +79,7 @@ $row2=mysqli_fetch_array($result2);
         </div>
         <?php 
             }  
-      } 
+          } 
         ?>
       </div>
       <?php
@@ -86,9 +87,9 @@ $row2=mysqli_fetch_array($result2);
           ?>
           <button id="group_apply_btn" onclick="location.href='group_edit.php?title=<?php echo $row['title'];?>'">모임 수정 / 삭제하기</button><br><br>
           <?php
-       }else if(in_array($_SESSION['user_id'],$row['member'])){
+       }else if(strstr($row['member'],$_SESSION['user_id'])){
           ?>
-          <button id="group_apply_btn" onclick="location.href='group_out.php?title=<?php echo $row['title'];?>''">모임 탈퇴하기</button><br><br>
+          <button id="group_apply_btn" onclick="location.href='group_out.php?title=<?php echo $row['title'];?>'">모임 탈퇴하기</button><br><br>
           <?php
        }else{
           ?><button id="group_apply_btn" onclick="location.href='group_join.php?title=<?php echo $row['title'];?>'" type="submit">모임 가입하기</button><br><br><?php
