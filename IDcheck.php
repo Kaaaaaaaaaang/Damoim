@@ -7,11 +7,11 @@
 	if($member==0)
 	{
 ?>
-	<div style='font-family:"malgun gothic"';><?php echo $uid; ?>는 사용가능한 아이디입니다.</div>
+	<script>alert("사용 가능한 아이디입니다");</script>
 <?php 
 	}else{
 ?>
-	<div style='font-family:"malgun gothic"; color:red;'><?php echo $uid; ?> 사용중인 아이디입니다. <div>
+	<script>alert("이미 사용 중인 아이디입니다");</script>
 <?php
 	}
 ?>

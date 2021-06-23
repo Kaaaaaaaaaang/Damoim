@@ -21,9 +21,23 @@
 		var userid = document.getElementById("userID").value;
 		if(userid)
 		{
-			url = "IDcheck.php?userID="+userid;
-			window.open(url,"chkid","width=300,height=200,toobar=no,menubar=no,location=no,scrollbar=no");
-			idck=true;
+			<?php
+
+				include "db.php";
+				$uid = $_GET["userID"];
+				$sql = mysqli_query($conn,"select count(*) from user where id='".$uid."'");
+		
+				if($sql==0)
+				{
+			?>
+				alert("사용 가능한 아이디입니다");
+			<?php 
+				}else{
+			?>
+				alert("이미 사용 중인 아이디입니다");
+			<?php
+				}
+			?>
 		}else{
 			alert("아이디를 입력하세요");
 		}
