@@ -13,7 +13,7 @@ $leader = $_SESSION['user_id'];
 $people = $_POST['people'];
 $grade = $_POST['grade'];
 $major = $_POST['major'];
-$how = $_POST['how'];
+$how = $_POST['way'];
 $day = $_POST['day'];
 $start = $_POST['start'];
 $end = $_POST['end'];
@@ -38,11 +38,6 @@ foreach($day_array as $value) {
 $day = $result;
 
 $uploaddir = 'upload/';
-echo $_FILES['study_img']['name']."<br>";
-echo $_FILES['study_img']['type']."<br>";
-echo $_FILES['study_img']['size']."<br>";
-echo $_FILES['study_img']['tmp_name']."<br>";
-echo $_FILES['study_img']['error']."<br>";
 
 $uploadfile = $uploaddir.$_FILES['study_img']['name'];
 $f_name = $_FILES['study_img']['name'];
@@ -55,7 +50,6 @@ if(move_uploaded_file($_FILES['study_img']['tmp_name'], $uploadfile)){
   $img_ad = $uploadfile;
   move_uploaded_file($tmp_name,$uploaddir);
 }
-echo $uploadfile;
 
 $sql  = "UPDATE study SET max_mem='$people', grade='$grade', major='$major', how='$how', study_day='$day', start_time='$start', end_time='$end', img_path='$img_ad', intro='$intro' WHERE title='$title'";
 
@@ -70,6 +64,7 @@ if($result==true){
 
 <?php
 }else{
+  echo $result;
 ?>
 
 <script>

@@ -21,11 +21,27 @@ echo $title;
 	<link href="css/all.css" rel="stylesheet" type="text/css" />
 	<meta content="BlendTrans(Duration=0.2)" http-equiv="Page-Enter">
 	<meta content="BlendTrans(Duration=0.2)" http-equiv="Page-exit">
+	<script>
+		function getPost(mode) { 
+			var theForm = document.edit_form; 
+			if(mode == "01") { 
+				//theForm.method = "post"; 
+				//theForm.target = "_self"; 
+				//heForm.action = "group_update.php?title=<?php echo $title;?>"; 
+				$("#group_create_btn").attr("action", "group_update.php?title=<?php echo $title;?>");
+			} else if(mode == "02") { 
+				theForm.method = "get"; 
+				theForm.target = "_blank"; 
+				theForm.action = "group_delete.php?title=<?php echo $title;?>" 
+			} 
+			theForm.submit(); }
+
+	</script>
 </head>
 <body>
 	<div class="container">
     <div class="container2">
-   		<form method="post" action="group_update.php"  enctype="multipart/form-data">
+   		<form method="post" enctype="multipart/form-data" name="edit_form" action="group_update.php?title=<?php echo $title;?>">
 		  <select name="people" style="color: #000000; background-color: #00000000; float: left; margin-left: 4.5%;">
 		    <option value="none" style="color: #000000;">모임 최대 인원수</option>
 			<option value="1명" style="color: #000000;">1명</option>
@@ -89,15 +105,18 @@ echo $title;
 				<div class="layout_group_about_box">
 					<span>모임 설명</span>
 					<br>
-					<textarea id="about"><?php echo $row['intro'];?></textarea>
+					<textarea id="about" name="intro"><?php echo $row['intro'];?></textarea>
 				</div>
 				<div class="layout_group_img">
 					<span>그룹 사진</span>
 					<input type="file" id="group_img_src" name="study_img"></input>
 				</div>
-     		<button id="group_create_btn" onclick="location.href='group_update.php?title=<?php echo $row['title'];?>'" type="submit" >모임 수정하기</button>
-    		<button id="group_delete_btn" onclick="location.href='group_delete.php?title=<?php echo $row['title'];?>'" style="margin-bottom: 10%;">모임 삭제하기</button>
+     		<button type="submit"id="group_create_btn">모임 수정하기</button>
+    		
     	</form>
+		<form>
+		<button id="group_delete_btn" style="margin-bottom: 10%;">모임 삭제하기</button>
+		</form>
 		</div>
 		<div class="menu">
 			<a href="main.php"><img id="logo" src="img/logo.png"></a>

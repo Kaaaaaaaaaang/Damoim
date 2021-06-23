@@ -65,7 +65,7 @@ if(!isset($_SESSION['user_name'])) echo("<script>location.href='login.html';</sc
                          <h3 id="group_title"><?php echo $row2['title'];?></h3><br>
                          <p id="group_about"><?php echo $row2['intro'];?></p>
                     </figcaption>
-                    <a href="group.php"></a>
+                    <a href="group.php?title=<?php echo $row2['title'];?>"></a>
                </figure>
                <?php
                     }
