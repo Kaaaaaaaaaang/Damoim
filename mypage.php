@@ -45,13 +45,14 @@ if(!isset($_SESSION['user_name'])) echo("<script>location.href='login.html';</sc
      	</div>
      	<div class="group_list" style="float: left;">
                <?php
-               $sql1 = "select COUNT(*) FROM study where member in ('".$_SESSION['user_id']."')";
+               $sql1 = "select COUNT(*) FROM study where member like'%|".$_SESSION['user_id']."|%'";
 
 
-               $sql = "select * FROM study where member in ('".$_SESSION['user_id']."')";
-               $cnt=mysqli_query($conn, $sql1);
+               $sql = "select * FROM study where member like '%|".$_SESSION['user_id']."|%'";
+               
 			$result1=mysqli_query($conn, $sql);
-               if($result1 == 1){
+               $cnt=mysqli_num_rows($result1);
+               if($cnt == 0){
                     ?>
                     <img id="not_moim" src="img/not_moim.png">
                     <?php
