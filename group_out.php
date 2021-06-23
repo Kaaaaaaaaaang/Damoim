@@ -5,12 +5,13 @@ session_start();
  
 $title=$_GET['title'];
 
-$sql = "SELECT member FROM study WHERE title='$title'";
+$sql = "SELECT * FROM study WHERE title='$title'";
 $result = mysqli_query($conn, $sql);
+$row=mysqli_fetch_array($result);
 
-$member = explode("|", $result);
+$member = explode("|", $row['member']);
 $student = array_search($_SESSION['user_name'], $member);
-array_splice($member, $student, 1);
+unset($member[$student]);
 
 foreach($member as $value) {
   $result = implode("|", $value);
