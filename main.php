@@ -31,7 +31,7 @@
 				}
 			?>
      	</div>
-		 <div class="menu">
+		 <div class="menu" style="background-color: #00000000;">
 			<a href="main.php"><img id="logo" src="img/logo.png"></a>
 			<a href="mypage.php"><h3 id="mypage">마이페이지</h3></a>
 			<h3>|</h3>

@@ -9,7 +9,7 @@ if(!isset($_SESSION['user_name'])) echo("<script>location.href='login.html';</sc
 	<meta charset="utf-8">
 	<title>다모임</title>
 	<link rel='icon' type='images/png'href='img/logo.png'>
-	<link href="css/group_create.css" rel="stylesheet" type="text/css" />
+	<link href="css/new_group_create.css" rel="stylesheet" type="text/css" />
 	<link href="css/all.css" rel="stylesheet" type="text/css" />
 	<meta content="BlendTrans(Duration=0.2)" http-equiv="Page-Enter">
 	<meta content="BlendTrans(Duration=0.2)" http-equiv="Page-exit">
@@ -18,7 +18,7 @@ if(!isset($_SESSION['user_name'])) echo("<script>location.href='login.html';</sc
 	<div class="container">
      	<div class="container2">
      		<form method="post" action="group_create2.php"  enctype="multipart/form-data">
-			  <select name="people" style="color: #000000; background-color: #00000000; float: left; margin-left: 4.7%;">
+			  <select name="people" style="color: #000000; background-color: #00000000; float: left; margin-left: 4.7%; margin-top: 5%;">
 			    <option value="none" style="color: #000000;">모임 최대 인원수</option>
 			    <option value="1" style="color: #000000;">1명</option>
 			    <option value="2" style="color: #000000;">2명</option>
@@ -31,7 +31,7 @@ if(!isset($_SESSION['user_name'])) echo("<script>location.href='login.html';</sc
 			    <option value="9" style="color: #000000;">9명</option>
 			    <option value="10" style="color: #000000;">10명</option>
 			  </select>
-			  <select name="category" style="color: #000000; background-color: #00000000; margin-left: 5%;">
+			  <select name="category" style="color: #000000; background-color: #00000000; margin-left: 5%; margin-top: 5%;">
 			    <option value="none" style="color: #000000;">카테고리</option>
 			    <option value="취업 준비" style="color: #000000;">취업 준비</option>
 			    <option value="전공 과목 스터디" style="color: #000000;">전공과목 스터디</option>
@@ -92,7 +92,7 @@ if(!isset($_SESSION['user_name'])) echo("<script>location.href='login.html';</sc
 					<span>그룹 사진</span>
 					<input type="file" id="group_img_src" name="study_img"></input>
 				</div>
-     		<button id="group_create_btn" onclick="location.href='group_create2.php'" style="margin-bottom: 30%;" type="submit">모임 생성하기</button>
+     		<button id="group_create_btn" onclick="location.href='group_create2.php'" style="margin-bottom: 10%;" type="submit">모임 생성하기</button>
      	</form>
 		</div>
 		<div class="menu">

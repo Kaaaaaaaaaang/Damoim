@@ -17,7 +17,7 @@ echo $title;
 	<meta charset="utf-8">
 	<title>다모임</title>
 	<link rel='icon' type='images/png'href='img/logo.png'>
-	<link href="css/group_create.css" rel="stylesheet" type="text/css" />
+	<link href="css/new_group_create.css" rel="stylesheet" type="text/css" />
 	<link href="css/all.css" rel="stylesheet" type="text/css" />
 	<meta content="BlendTrans(Duration=0.2)" http-equiv="Page-Enter">
 	<meta content="BlendTrans(Duration=0.2)" http-equiv="Page-exit">
@@ -39,9 +39,9 @@ echo $title;
 		    <option value="9명" style="color: #000000;">9명</option>
 		    <option value="10명" style="color: #000000;">10명</option>
 		  </select>
-		  <h3 id="category" style="color: #000000; background-color: #00000000; margin-left: 5%; float: left;"><?php echo $row['category'];?></h3>
+		  <h3 id="category" style="color: #000000; background-color: #00000000; margin-left: 5%; float: left;">이게모지<?php echo $row['category'];?></h3>
 			<div class="layout_group_title_box"  style="text-align: left;">
-			<h4 id="group_name" style="color: #000000; margin-left: 5%; float: left; margin-bottom: 5%;"><?php echo $row['title'];?></h4>
+			<h4 id="group_name" style="color: #000000; margin-left: 5%; float: left; margin-bottom: 5%;">모임이름<?php echo $row['title'];?></h4>
 				</div>
 			<div class="layout_box">
 				<span>가입 가능 학년</span>
@@ -96,7 +96,7 @@ echo $title;
 					<input type="file" id="group_img_src" name="study_img"></input>
 				</div>
      		<button id="group_create_btn" onclick="location.href='group_update.php?title=<?php echo $row['title'];?>'" type="submit" >모임 수정하기</button>
-    		<button id="group_delete_btn" onclick="location.href='group_delete.php?title=<?php echo $row['title'];?>'" style="margin-bottom: 30%;">모임 삭제하기</button>
+    		<button id="group_delete_btn" onclick="location.href='group_delete.php?title=<?php echo $row['title'];?>'" style="margin-bottom: 10%;">모임 삭제하기</button>
     	</form>
 		</div>
 		<div class="menu">

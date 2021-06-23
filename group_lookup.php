@@ -15,7 +15,6 @@ $searchSQL=$_GET['search'];
 </head>
 <body>
 	<div class="container">
-  		<img src="img/backback.png" style="position:absolute; top:50%; margin-top:-100px;">
     	<div class="container2">
     		<span style="color: black;">그룹조회</span>
 			<form method="POST" action="search.php">

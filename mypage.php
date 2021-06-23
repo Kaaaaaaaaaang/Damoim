@@ -22,7 +22,7 @@ if(!isset($_SESSION['user_name'])) echo("<script>location.href='login.html';</sc
                ?>
      		<div class="box" style="background: #BDBDBD;"><img id="profile_img" src="<?php echo $row['img_path']?>"></div>
                
-     		<h3 id="mypage_name"><?php echo $row['name'];?></h3>
+     		<h3 id="mypage_name" style="width: 100%;"><?php echo $row['name'];?></h3>
                <div class="layout">
                     <img src="img/building.png" style="width: 10%; float: left; margin-right: 4%;">
                     <h3 id="mypage_school">미림여자정보과학고등학교</h3>
