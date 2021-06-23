@@ -64,10 +64,13 @@ $row2=mysqli_fetch_array($result2);
 						<?php
             $sql3 = "SELECT * from study";
 					  $result4=mysqli_query($conn, $sql3);
-					  while($row3 = mysqli_fetch_array($result4)){
-              echo $row3['id'];
-              $sql4 = "SELECT * from user id='".$row3['id']."'";
-              echo $sql4;
+            $row3 = mysqli_fetch_array($result4);
+            $member = explode("|", $row3['member']);
+
+					  for($i=0; $i<count($member); $i++){
+
+              $sql4 = "SELECT * from user where id='".$member[$i]."'";
+
 					    $result5=mysqli_query($conn, $sql4);
               while($row4 = mysqli_fetch_array($result5)){
         ?>
