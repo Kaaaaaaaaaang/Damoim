@@ -39,11 +39,6 @@ foreach($day_array as $value) {
 $day = $result;
 
 $uploaddir = 'upload/';
-echo $_FILES['study_img']['name']."<br>";
-echo $_FILES['study_img']['type']."<br>";
-echo $_FILES['study_img']['size']."<br>";
-echo $_FILES['study_img']['tmp_name']."<br>";
-echo $_FILES['study_img']['error']."<br>";
 
 $uploadfile = $uploaddir.$_FILES['study_img']['name'];
 $f_name = $_FILES['study_img']['name'];

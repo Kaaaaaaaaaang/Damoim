@@ -38,7 +38,7 @@ $row2=mysqli_fetch_array($result2);
       <div class="head_about_box">
         <div class="box">
           <h2>모임장 소개</h2><br>
-          <img id="head_profile_img" src="img/sample_proflie.png"><br>
+          <img id="head_profile_img" src="<?php echo $row2['img_path'];?>"><br>
           <span id="head_name"><?php echo $row2['name'];?></span><br>
           <span id="head_hakgwa"><?php echo $row2['major'];?></span><br>
           <span id="head_age"><?php echo $row2['grade'];?></span>
