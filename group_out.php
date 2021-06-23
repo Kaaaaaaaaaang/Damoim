@@ -13,10 +13,12 @@ $member = explode("|", $row['member']);
 $student = array_search($_SESSION['user_name'], $member);
 unset($member[$student]);
 
-foreach($member as $value) {
-  $result = implode("|", $value);
+$mem_array = array($member);
+
+foreach($mem_array as $value) {
+  $save = implode("|", $value);
 }
-$mem = $result;
+$mem = $save;
 
 $sql = "UPDATE study SET member='$mem' WHERE title='$title'";
 
