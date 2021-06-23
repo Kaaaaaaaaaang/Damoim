@@ -8,7 +8,7 @@ $title=$_GET['title'];
 $sql = "SELECT * FROM study WHERE title='$title'";
 $result = mysqli_query($conn, $sql);
 $row=mysqli_fetch_array($result);
-$student = $row['member'].'|'.$_SESSION['user_name'];
+$student = $row['member'].'|'.$_SESSION['user_id'];
 
 $sql = "UPDATE study SET member='$student' WHERE title='$title'";
 
