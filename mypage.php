@@ -45,26 +45,27 @@ if(!isset($_SESSION['user_name'])) echo("<script>location.href='login.html';</sc
      	</div>
      	<div class="group_list" style="float: left;">
                <?php
-               $sql1 = "select COUNT(*) FROM study where ".$_SESSION['user_id']." in member";
-               $cnt=mysqli_query($conn, $sql1);
+               $sql1 = "select COUNT(*) FROM study where member in ('".$_SESSION['user_id']."')";
 
-               $sql = "select * FROM study where ".$_SESSION['user_id']." in member";
-               $result=mysqli_query($conn, $sql);
-               if($result == 0){
+
+               $sql = "select * FROM study where member in ('".$_SESSION['user_id']."')";
+               $cnt=mysqli_query($conn, $sql1);
+			$result1=mysqli_query($conn, $sql);
+               if($result1 == 0){
                     ?>
                     <img id="not_moim" src="img/not_moim.png">
                     <?php
                }else{
-                    while($row = mysqli_fetch_array($result)){
+                    while($row2 = mysqli_fetch_array($result1)){
                ?>
                     <figure class="group_about_box">
-          		<img id="group_img" src="<?php echo $row['img_path'][$i]; ?>">
+          		<img id="group_img" src="<?php echo $row2['img_path']; ?>">
                     <figcaption>
                          <br>
-                        <h3 id="group_title"><?php echo $row['title'][$i];?></h3><br>
-                        <p id="group_about"><?php echo $row['intro'][$i];?></p>
+                         <h3 id="group_title"><?php echo $row2['title'];?></h3><br>
+                         <p id="group_about"><?php echo $row2['intro'];?></p>
                     </figcaption>
-                    <a href="my_group.html"></a>
+                    <a href="group.php"></a>
                </figure>
                <?php
                     }
