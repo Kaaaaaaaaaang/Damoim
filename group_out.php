@@ -11,11 +11,10 @@ $row=mysqli_fetch_array($result);
 
 $member = explode("|", $row['member']);
 
-$mem_array = array($member);
-$student = array_search($_SESSION['user_name'], $mem_array);
-unset($mem_array[$student]);
+$student = array_search($_SESSION['user_name'], $member);
+unset($member[$student]);
 
-foreach($mem_array as $value) {
+foreach($member as $value) {
   $save = implode("|", $value);
 }
 $mem = $save;
