@@ -51,7 +51,7 @@ if(!isset($_SESSION['user_name'])) echo("<script>location.href='login.html';</sc
                $sql = "select * FROM study where member in ('".$_SESSION['user_id']."')";
                $cnt=mysqli_query($conn, $sql1);
 			$result1=mysqli_query($conn, $sql);
-               if($result1 == 0){
+               if($result1 == 1){
                     ?>
                     <img id="not_moim" src="img/not_moim.png">
                     <?php
